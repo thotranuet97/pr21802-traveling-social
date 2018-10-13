@@ -1,0 +1,222 @@
+@import "bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
+$color: #f33155;
+
+body{
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  background: #EDF1F5;
+}
+a:hover{
+  text-decoration: none;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 61px 0 0; /* Height of navbar */
+  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 61px);
+  padding-top: 13px;
+  overflow-x: hidden;
+  background: #fff;
+  overflow-y: auto;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #252525;
+  padding: 15px 35px 15px 20px;
+  &:hover{
+    background: #EDEDED;
+    color: $color;
+  }
+  i{
+    margin-right: 10px;
+  }
+}
+
+.sidebar .nav-link.active {
+  background: #EDEDED;
+  color: $color;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+[role="main"] {
+  padding-top: 61px; 
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: #fff;
+  box-shadow: none;
+  color: #fff;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+.navbar-content{
+  display: flex;
+  .search-text{
+    background: #fafafa;
+    border-radius: 50px;
+    padding: 10px 20px;
+    width: 400px;
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #aaa;
+      font-size: 12px;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: #aaa;
+      font-size: 12px;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: #aaa;
+      font-size: 12px;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: #aaa;
+      font-size: 12px;
+    }
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    li{
+      margin-left: 10px;
+      list-style: none;
+      display: inline-block;
+      a{
+        img{
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+        }
+        span{
+          color: #fff;
+          font-weight: 500;
+          margin-left: 5px
+        }
+        i{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.search-wrapper{
+  position: relative;
+  .btn-submit{
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    padding-right: 30px;
+  }
+}
+
+.topbar-wrapper{
+  .row{
+    margin-left: -25px;
+    margin-right: -25px;
+    background: #fff;
+  }
+  .page-title{
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    height: 60px;
+    line-height: 60px;
+  }
+  .breadcrumb{
+    margin-bottom: 0;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+    justify-content: flex-end;
+    background: #fff;
+    li{
+      &:after{
+        content: "/";
+        color: rgba(0, 0, 0, 0.5);
+        margin: 0 5px; 
+      }
+      &:last-child{
+        &::after{
+          content: none;
+        }
+      }
+      a{
+        color: rgba(0, 0, 0, 0.5);
+        &:hover{
+          color: rgba(0, 0, 0, 1);
+        }
+      }
+      &.active{
+        color: $color;
+      }
+    }
+  }
+}
+.content-wrapper{
+  margin-top: 25px;
+}
+.content-box{
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 30px;
+  .box-title{
+    margin: 0 0 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+}
