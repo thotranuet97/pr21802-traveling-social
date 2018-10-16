@@ -16,6 +16,13 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
+gem 'cancancan'
+gem 'rolify'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ckeditor'
+gem 'friendly_id'
+gem 'cocoon'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
