@@ -233,7 +233,7 @@ a:hover{
     font-weight: 500;
   }
   input.form-control{
-    border-radius: 50px;
+    border-radius: 0;
     border-color: #ccc;
     padding: 10px 15px;
     background: #fafafa;
@@ -272,5 +272,14 @@ a:hover{
   align-items: center;
   .breadcrumb{
     margin-left: 20px;
+  }
+}
+.input-group{
+  select{
+    width: 100%;
+    border-radius: 0;
+    border-color: #ccc;
+    padding: 10px 15px;
+    background: #fafafa;
   }
 }

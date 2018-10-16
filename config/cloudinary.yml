@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hvdung14
+  api_key: '141819976264585'
+  api_secret: N1hZY5A_r-5ppIsEa8xg7_drULI
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hvdung14
+  api_key: '141819976264585'
+  api_secret: N1hZY5A_r-5ppIsEa8xg7_drULI
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hvdung14
+  api_key: '141819976264585'
+  api_secret: N1hZY5A_r-5ppIsEa8xg7_drULI
+  enhance_image_tag: true
+  static_image_support: false
