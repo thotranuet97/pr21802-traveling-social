@@ -1,0 +1,8 @@
+vi:
+  page:
+    index:
+      hello: "Xin chào"
+  layouts:
+    application:
+      en: "Tiếng Anh"
+      vi: "Tiếng Việt"
