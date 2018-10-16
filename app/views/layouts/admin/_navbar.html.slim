@@ -9,7 +9,7 @@ nav.navbar.navbar-dark.fixed-top.bg-dark.flex-md-nowrap.p-0
           span
             | Admin
       li
-        a[href="#"]
+        = link_to destroy_user_session_path, method: :delete do
           i.fas.fa-sign-out-alt
           span
             | Sign out

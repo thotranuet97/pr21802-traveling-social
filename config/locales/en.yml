@@ -37,3 +37,5 @@ en:
     application:
       en: "English"
       vi: "Vietnamese"
+    devise:
+      back_to_home: "Back to home"
