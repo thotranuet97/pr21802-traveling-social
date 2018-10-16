@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_134256) do
+ActiveRecord::Schema.define(version: 2018_10_16_025429) do
 
   create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 2018_10_15_134256) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "location_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "location_id"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_location_images_on_location_id"
-  end
-
   create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
@@ -67,16 +59,6 @@ ActiveRecord::Schema.define(version: 2018_10_15_134256) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_locations_on_user_id"
-  end
-
-  create_table "micro_post_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "micro_post_id"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["micro_post_id"], name: "index_micro_post_comments_on_micro_post_id"
-    t.index ["user_id"], name: "index_micro_post_comments_on_user_id"
   end
 
   create_table "micro_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -98,24 +80,6 @@ ActiveRecord::Schema.define(version: 2018_10_15_134256) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "review_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "review_id"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["review_id"], name: "index_review_comments_on_review_id"
-    t.index ["user_id"], name: "index_review_comments_on_user_id"
-  end
-
-  create_table "review_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "review_id"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["review_id"], name: "index_review_images_on_review_id"
-  end
-
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "location_id"
@@ -126,6 +90,17 @@ ActiveRecord::Schema.define(version: 2018_10_15_134256) do
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_reviews_on_location_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
+    t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
   create_table "user_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -149,16 +124,18 @@ ActiveRecord::Schema.define(version: 2018_10_15_134256) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_roles", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_users_roles_on_role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+    t.index ["user_id"], name: "index_users_roles_on_user_id"
+  end
+
   add_foreign_key "cities", "users"
   add_foreign_key "events", "users"
-  add_foreign_key "location_images", "locations"
   add_foreign_key "locations", "users"
-  add_foreign_key "micro_post_comments", "micro_posts"
-  add_foreign_key "micro_post_comments", "users"
   add_foreign_key "micro_posts", "locations"
-  add_foreign_key "review_comments", "reviews"
-  add_foreign_key "review_comments", "users"
-  add_foreign_key "review_images", "reviews"
   add_foreign_key "reviews", "locations"
   add_foreign_key "reviews", "users"
   add_foreign_key "user_events", "events"

@@ -31,6 +31,6 @@
 /config/master.key
 
 # Ignore
-/config/locales/database.yml
+/config/database.yml
 /db/schema.rb
 /Gemfile.lock
