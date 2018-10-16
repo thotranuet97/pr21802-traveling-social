@@ -8,9 +8,9 @@ nav.col-md-2.d-none.d-md-block.bg-light.sidebar
           span.sr-only
             | (current)
       li.nav-item
-        a.nav-link[href="#"]
-          i.fas.fa-city
-          |  Cities
+        = link_to new_admin_city_path, class: "nav-link" do
+          i.fas.fa-tachometer-alt
+          = t ".city"
       li.nav-item
         a.nav-link[href="#"]
           i.far.fa-map

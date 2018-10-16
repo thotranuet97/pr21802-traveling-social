@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_095842) do
 
   create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "city_id"
     t.string "name"
     t.string "longitude"
     t.string "latitude"
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_095842) do
     t.string "thumbnail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_locations_on_city_id"
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
@@ -146,6 +148,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_095842) do
 
   add_foreign_key "cities", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "locations", "cities"
   add_foreign_key "locations", "users"
   add_foreign_key "micro_posts", "locations"
   add_foreign_key "reviews", "locations"
