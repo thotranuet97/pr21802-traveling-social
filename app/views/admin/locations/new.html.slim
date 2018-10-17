@@ -2,10 +2,11 @@
   .row
     .col-lg-3.col-md-4.col-sm-4.col-xs-12
       h4.page-title
-        = t '.create'
+        = t ".create"
     .col-lg-9.col-sm-8.col-md-8.col-xs-12.topbar-admin
       .search-wrapper
-        input.form-control.search-text[type="text" placeholder=t('.search')]
+        input.form-control.search-text[type="text" placeholder=t(".search")]
         button.btn.btn-submit[type="submit"]
           i.fas.fa-search
+= render "shared/error_msg"
 = render "form"          

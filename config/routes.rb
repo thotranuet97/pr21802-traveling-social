@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/aa-admin', as: 'rails_admin'
   scope "(:locale)", locale: /en|vi/ do
     mount Ckeditor::Engine => '/ckeditor'
     devise_for :users

@@ -13,7 +13,15 @@ en:
     admin:
       title: "Travelling Social"
       sidebar:
-        city: "City"
+        dashboard: "Dashboard"
+        city: "Cities"
+        location: "Locaiton"
+        user: "Users"
+        comment: "Comments"
+        review: "Reviews"
+        status: "Status"
+        event: "Events"
+        statistic: "Statistic"
       navbar:
         language: "Language"
         en: "English"
@@ -21,6 +29,17 @@ en:
       back_to_home: "Back to home"
   admin:
     locations:
+      index: 
+        index: "List of locations"
+        search: "Search location"
+        name: "Location name"
+        city: "City"
+        created_at: "Created at"
+        action: "Action"
+        edit: "Edit"
+        delete: "Delete"
+        delete_confirm: "Do you want delete ?"
+        add_new: "Add new location"
       new:
         create: "Create new location"  
         search: "Search"
@@ -33,9 +52,18 @@ en:
       update:
         success: "Location was updated !"
         error: "Location updating error"
+      destroy:
+        success: "Location was deleted !"
       form:
         name: "Location name"
         description: "Location description"
         address: "Address"
         city: "City"
+        images: "Images"
         submit: "Submit"
+        thumbnail: "Thumbnail"
+  devise:
+    registrations:
+      new:
+        error_message: "%{count} must be fixed"
+        error: "error"
