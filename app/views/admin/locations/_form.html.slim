@@ -1,0 +1,23 @@
+.content-wrapper
+  = form_for [:admin, @location] do |f|
+    .content-box
+      .row
+        .col-md-8
+          .content-box-inner
+            h4.title-inner
+              = t '.name'
+            = f.text_field :name, class: "form-control"
+          .content-box-inner
+            h4.title-inner
+              = t '.descripton'
+            = f.cktext_area :description, class: "form-control"
+        .col-md-4
+          .content-box-inner
+            h4.title-inner
+              = t '.city'
+            .input-group
+              = f.collection_select :city_id, City.all, :id, :name
+        .col-md-12
+          .content-box-inner
+            = f.submit t('.submit'), class: "btn btn-submit"
+            

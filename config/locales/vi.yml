@@ -18,3 +18,17 @@ vi:
         language: "Ngôn ngữ"
         en: "Tiếng Anh"
         vi: "Tiếng Việt"
+    devise:
+      back_to_home: "Quay về trang chủ"
+  admin:
+    locations:
+      new:
+        create: "Tạo mới địa điểm"  
+      edit:
+        edit: "Sửa địa điểm"
+      form:
+        name: "Tên địa điểm"
+        des: "Mô tả địa điểm"
+        address: "Địa chỉ"
+        city: "Thành phố"
+        submit: "Đăng"

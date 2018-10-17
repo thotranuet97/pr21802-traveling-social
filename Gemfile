@@ -26,6 +26,8 @@ gem 'cocoon'
 gem 'config'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'cloudinary'
+gem 'geocoder'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
