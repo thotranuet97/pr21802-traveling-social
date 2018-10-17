@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title
+      | Prj2
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'devise', 'data-turbolinks-track': 'reload'
+  body#devise-body
+    .devise-wrapper
+      = yield
+    = link_to t('.back_to_home'), root_path
