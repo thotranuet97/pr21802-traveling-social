@@ -4,5 +4,17 @@ vi:
       hello: "Xin chào"
   layouts:
     application:
+      language: "Ngôn ngữ"
       en: "Tiếng Anh"
       vi: "Tiếng Việt"
+      title: "Mạng xã hội - Du lịch"
+    devise:
+      back_to_home: "Về trang chủ"   
+    admin:
+      title: "Mạng xã hội - Du lịch"      
+      sidebar:
+        city: "Thành phố"
+      navbar:
+        language: "Ngôn ngữ"
+        en: "Tiếng Anh"
+        vi: "Tiếng Việt"

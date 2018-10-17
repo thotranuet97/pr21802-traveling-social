@@ -35,7 +35,17 @@ en:
       hello: "Hello world"
   layouts:
     application:
+      language: "Language"
       en: "English"
       vi: "Vietnamese"
+      title: "Travelling Social"
     devise:
-      back_to_home: "Back to home"
+      back_to_home: "Back to home"      
+    admin:
+      title: "Travelling Social"
+      sidebar:
+        city: "City"
+      navbar:
+        language: "Language"
+        en: "English"
+        vi: "Vietnamese"        

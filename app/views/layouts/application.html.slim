@@ -2,13 +2,16 @@ doctype html
 html
   head
     title
-      | Prj2
+      = t ".title"
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = link_to t(".en"), locale:"en"
-    span |
-    = link_to t(".vi"), locale:"vi"
+    .btn-group
+    button.btn.btn-info.dropdown-toggle type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+      = t ".language"
+    .dropdown-menu
+      = link_to t(".en"), {locale: "en"}, class: "dropdown-item"
+      = link_to t(".vi"), {locale: "vi"}, class: "dropdown-item"
     = yield
