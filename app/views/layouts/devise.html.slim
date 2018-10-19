@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | Prj2
+      = t ".title"
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload'
@@ -18,4 +18,4 @@ html
             = alert
     .devise-wrapper
       = yield
-    = link_to t('.back_to_home'), root_path
+    = link_to t(".back_to_home"), root_path
