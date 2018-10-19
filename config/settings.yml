@@ -2,3 +2,6 @@ admin:
   locations:
     index:
       per_page: 20
+  cities:
+    index:
+      per_page: 20

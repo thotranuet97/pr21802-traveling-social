@@ -7,26 +7,29 @@ en:
       language: "Language"
       en: "English"
       vi: "Vietnamese"
-      title: "Travelling Social"
-    devise:
-      back_to_home: "Back to home"      
+      title: "Travelling Social"      
     admin:
       title: "Travelling Social"
       sidebar:
         dashboard: "Dashboard"
-        city: "Cities"
-        location: "Locaiton"
-        user: "Users"
-        comment: "Comments"
-        review: "Reviews"
+        cities: "Cities"
+        locations: "Locations"
+        users: "Users"
+        comments: "Comments"
+        reviews: "Reviews"
         status: "Status"
-        event: "Events"
+        events: "Events"
         statistic: "Statistic"
       navbar:
         language: "Language"
         en: "English"
-        vi: "Vietnamese"        
+        vi: "Vietnamese"
+        admin: "Admin"
+        sign_out: "Sign out"
       back_to_home: "Back to home"
+    devise:
+      back_to_home: "Back to home"
+      title: "Travelling Social"
   admin:
     locations:
       index: 
@@ -41,7 +44,7 @@ en:
         delete_confirm: "Do you want delete ?"
         add_new: "Add new location"
       new:
-        create: "Create new location"  
+        create: "Created new location"  
         search: "Search"
       edit:
         edit: "Edit location"
@@ -62,6 +65,37 @@ en:
         images: "Images"
         submit: "Submit"
         thumbnail: "Thumbnail"
+    cities:
+      new:
+        create: "Create new City"  
+        search: "Search"
+      index:
+        index: "Cities"
+        search: "Search"
+        add_new: "Add new"
+        id: "ID"
+        name: "Name"
+        created_at: "Created_at"
+        action: "Action"
+        edit: "Edit"
+        delete: "Delete"
+        delete_confirm: "Are you sure?"
+      edit:
+        edit: "Edit City"
+        search: "Search"
+      create:
+        success: "City was created !"
+        error: "City creating error"
+      update:
+        success: "City was updated !"
+        error: "City updating error"
+      destroy:
+        success: "Deleted successfully!"
+      form:
+        name: "City name"
+        description: "City description"
+        thumbnail: "Thumbnail"
+        submit: "Submit" 
   devise:
     registrations:
       new:

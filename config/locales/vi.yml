@@ -7,28 +7,77 @@ vi:
       language: "Ngôn ngữ"
       en: "Tiếng Anh"
       vi: "Tiếng Việt"
-      title: "Mạng xã hội - Du lịch"
-    devise:
-      back_to_home: "Về trang chủ"   
+      title: "Mạng xã hội - Du lịch"  
     admin:
       title: "Mạng xã hội - Du lịch"      
       sidebar:
-        city: "Thành phố"
+        dashboard: "Bảng điều khiển"
+        cities: "Thành phố"
+        locations: "Địa điểm"
+        users: "Người dùng"
+        comments: "Bình luận"
+        reviews: "Đánh giá"
+        status: "Trạng thái"
+        events: "Sự kiện"
+        statistic: "Thống kê"
       navbar:
         language: "Ngôn ngữ"
         en: "Tiếng Anh"
         vi: "Tiếng Việt"
+        admin: "Admin"
+        sign_out: "Đăng xuất"
+      back_to_home: "Quay về trang chủ"
     devise:
       back_to_home: "Quay về trang chủ"
+      tilte: "Mạng xã hội - Du lịch"  
   admin:
     locations:
       new:
-        create: "Tạo mới địa điểm"  
+        create: "Tạo mới địa điểm" 
+        search: "Tìm kiếm" 
       edit:
         edit: "Sửa địa điểm"
+        search: "Tìm kiếm"
+      create:
+        success: "Địa điểm mới đã được tạo!"
+        error: "Tạo địa điểm bị lỗi!"
+      update:
+        success: "Địa điểm đã được cập nhật!"
+        error: "Cập nhật địa điểm bị lỗi!"
       form:
         name: "Tên địa điểm"
         des: "Mô tả địa điểm"
         address: "Địa chỉ"
         city: "Thành phố"
+        submit: "Đăng"
+    cities:
+      new:
+        create: "Tạo mới"  
+        search: "Tìm kiếm"
+      index:
+        index: "Thành phố"
+        search: "Tìm kiếm"
+        add_new: "Thêm mới"
+        id: "ID"
+        name: "Tên"
+        created_at: "Ngày tạo"
+        action: "Thao tác"
+        edit: "Sửa"
+        delete: "Xóa"
+        delete_confirm: "Bạn có chắc chắn muốn xóa?"
+      edit:
+        edit: "Sửa"
+        search: "Tìm kiếm"
+      create:
+        success: "Bản ghi thành phố mới đã được tạo!"
+        error: "Lỗi tạo mới bản ghi thành phố!"
+      update:
+        success: "Thông tin thành phố đã được cập nhật!"
+        error: "Lỗi cập nhật thông tin thành phố!"
+      destroy:
+        success: "Đã xóa!"
+      form:
+        name: "Tên thành phố:"
+        description: "Giới thiệu:"
+        thumbnail: "Hình đại diện:"
         submit: "Đăng"

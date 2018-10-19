@@ -2,31 +2,31 @@ nav.col-md-2.d-none.d-md-block.bg-light.sidebar
   .sidebar-sticky
     ul.nav.flex-column
       li.nav-item
-        a.nav-link.active[href="#"]
+        = link_to "#", class: "nav-link" do
           i.fas.fa-tachometer-alt
           = t ".dashboard" 
           span.sr-only
             | (current)
       li.nav-item
         = link_to admin_cities_path, class: "nav-link" do
-          i.fas.fa-city
-          = t ".city"
+          i.fas.fa-tachometer-alt
+          = t ".cities"
       li.nav-item
-        = link_to admin_locations_path, class: "nav-link" do
+        = link_to "#", class: "nav-link" do
           i.far.fa-map
-          = t ".location" 
+          = t ".locations"
       li.nav-item
         = link_to "#", class: "nav-link" do
           i.fas.fa-users
-          = t ".user" 
+          = t ".users"
       li.nav-item
         = link_to "#", class: "nav-link" do
           i.far.fa-comments
-          = t ".comment"
+          = t ".comments"
       li.nav-item
         = link_to "#", class: "nav-link" do
           i.far.fa-sticky-note
-          = t ".review"
+          = t ".reviews"
       li.nav-item
         = link_to "#", class: "nav-link" do
           i.far.fa-bookmark
@@ -34,8 +34,8 @@ nav.col-md-2.d-none.d-md-block.bg-light.sidebar
       li.nav-item
         = link_to "#", class: "nav-link" do
           i.far.fa-calendar-alt
-          = t ".event"
+          = t ".events"
       li.nav-item
         = link_to "#", class: "nav-link" do
           i.far.fa-chart-bar
-          = t ".statistic"            
+          = t ".statistic"         
