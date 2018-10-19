@@ -1,8 +1,14 @@
 class Location < ApplicationRecord
   belongs_to :user
-  belongs_to :city, required: false
+  belongs_to :city, required: false, inverse_of: :locations
   has_many :reviews, dependent: :destroy
-  has_many :images, as: :lr_image, dependent: :destroy
+  has_many :images, as: :lr_image, dependent: :destroy, inverse_of: :lr_image
+  rails_admin do
+    configure :lr_image do
+      hide
+    end
+  end
+
   accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
 
   validates :name, presence: true
@@ -16,6 +22,6 @@ class Location < ApplicationRecord
     name_changed? || super
   end
 
-  geocoded_by :name
-  after_validation :geocode, if: :name_changed?
+  serialize :address, JSON
+
 end
