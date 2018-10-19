@@ -8,6 +8,14 @@ html
     = stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'devise', 'data-turbolinks-track': 'reload'
   body#devise-body
+    .devise-flash
+      .alert-msg
+        - if notice
+          .alert.alert-info
+            = notice
+        - if alert
+          .alert.alert-warning
+            = alert
     .devise-wrapper
       = yield
     = link_to t('.back_to_home'), root_path

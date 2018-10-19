@@ -1,0 +1,4 @@
+admin:
+  locations:
+    index:
+      per_page: 20
