@@ -27,9 +27,11 @@ gem 'config'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'cloudinary'
-gem 'geocoder'
 gem 'pagy'
+
 gem 'rails_admin'
+gem 'rails_admin_google_map'
+
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
