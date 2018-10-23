@@ -7,11 +7,9 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag "https://use.fontawesome.com/releases/v5.4.1/css/all.css", integrity: "sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz", crossorigin: "anonymous"
   body
-    .btn-group
-    button.btn.btn-info.dropdown-toggle type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-      = t ".language"
-    .dropdown-menu
-      = link_to t(".en"), {locale: "en"}, class: "dropdown-item"
-      = link_to t(".vi"), {locale: "vi"}, class: "dropdown-item"
-    = yield
+    .theme-layout
+      = render "layouts/header"
+      = yield
+      = render "layouts/footer"
