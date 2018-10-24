@@ -2,7 +2,26 @@ vi:
   page:
     index:
       hello: "Xin chào"
+      browse: "Duyệt"
+      news_feed: "Bảng tin"
+      my_page: "Trang của tôi"
+      following: "Đang theo dõi"
+      images: "Ảnh"
+      events: "Sự kiện"
+      logout: "Đăng xuất"
+      recent: "Hoạt động gần đây"
+      your_page: "Trang của bạn"
+      new_events: "Tạo một sự kiện mới."
+      start_now: "Bắt đầu ngay!"
+      likes: "thích"
+      views: "lượt xem"
+      new_likes: "lượt thích mới tuần này"
   layouts:
+    header:
+      en: "Tiếng Anh"
+      vi: "Tiếng Việt"
+    footer:
+      copy_right: "© Winku 2018. All rights reserved."
     application:
       language: "Ngôn ngữ"
       en: "Tiếng Anh"

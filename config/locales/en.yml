@@ -2,7 +2,32 @@ en:
   page:
     index:
       hello: "Hello world"
+      browse: "Browse"
+      news_feed: "News Feed"
+      my_page: "My Page"
+      following: "Following"
+      images: "Images"
+      events: "Events"
+      logout: "Logout"
+      recent: "Recent Activity"
+      your_page: "Your Page"
+      my_page: "My Page"
+      new_events: "Create your new events."
+      start_now: "Start now!"
+      likes: "likes"
+      views: "views"
+      new_likes: "new likes this week"
+      write_something: "Write something..."
   layouts:
+    header:
+      en: "English"
+      vi: "Vietnamese"
+      home: "Home"
+      timeline: "Timeline"
+      account_settings: "Account Settings"
+      more_pages: "More Pages"
+    footer:
+      copy_right: "© Winku 2018. All rights reserved."
     application:
       language: "Language"
       en: "English"
