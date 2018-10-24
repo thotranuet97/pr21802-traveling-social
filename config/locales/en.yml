@@ -55,6 +55,14 @@ en:
     devise:
       back_to_home: "Back to home"
       title: "Travelling Social"
+    user-header:
+      follow: "Follow"
+      edit-cover: "Edit cover image"
+      timelines: "Timelines"
+      photos: "Photos"
+      reviews: "Reviews"
+      about: "About"
+      follow: "Follow"
   admin:
     locations:
       index: 
@@ -126,3 +134,29 @@ en:
       new:
         error_message: "%{count} must be fixed"
         error: "error"
+  users: 
+    update: 
+      user_updated: "User info update"
+      user_updated_error: User info update error
+    edit:
+      edit-title: "Edit Basic Information"
+      first-name: "First name"
+      last-name: "Last name"
+      phone: "Phone"
+      birthday: "Birthday"
+      male: "Male"
+      female: "Female"
+      other: "Other"
+      gender: "Gender"
+      about-me: "About me"
+      upload-avatar: "Upload avatar"
+      avatar: "Avatar"
+      upload-cover: "Upload cover image"
+      cover: "Cover image"
+      update: "Update"
+    show:
+      personal-info: "Personal information"
+      phone: "Phone"
+      birthday: "Birthday"
+      gender: "Gender"
+      about-me: "About me"

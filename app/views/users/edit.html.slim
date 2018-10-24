@@ -1,0 +1,74 @@
+= render "layouts/user-header"
+section
+  .gap.gray-bg
+    .container-fluid
+      .row
+        .col-lg-12
+          #page-contents.row
+            .col-lg-3
+              = render "layouts/left-sidebar" 
+            .col-lg-6
+              = render "shared/error_msg"
+              .central-meta
+                .editing-info
+                  h5.f-title
+                    i.fas.fa-info-circle
+                    = t ".edit-title"
+                  = form_for @user do |f|
+                    .form-group.half
+                      = f.text_field :first_name
+                      label.control-label
+                        = t ".first-name"
+                      i.mtrl-select
+                    .form-group.half
+                      = f.text_field :last_name
+                      label.control-label
+                        = t ".last-name"
+                      i.mtrl-select
+                    .form-group.half
+                      = f.telephone_field :phone
+                      label.control-label
+                        = t ".phone"
+                      i.mtrl-select
+                    .form-group.half
+                      = f.date_field :birtday
+                      label.control-label
+                        = t ".birthday"
+                      i.mtrl-select
+                    .form-group
+                      .radio
+                        = f.radio_button :gender, "male"
+                        = t ".male"
+                      .radio
+                        = f.radio_button :gender, "female"
+                        = t ".female"
+                      .radio
+                        = f.radio_button :gender, "other"
+                        = t ".other"
+                      label.control-label
+                        = t ".gender"
+                    .form-group
+                      = f.text_area :about, rows: 10
+                      label.control-label
+                        = t ".about-me"
+                      i.mtrl-select
+                    .form-group.half
+                      label.file-wrapper[for="avatar-input"]
+                        i.far.fa-image
+                        = t ".upload-avatar"
+                      = f.file_field :thumbnail, id: "avatar-input", class: "input-file"
+                      span.file-name
+                      label.control-label
+                        = t ".avatar"
+                    .form-group.half
+                      label.file-wrapper[for="cover-input"]
+                        i.far.fa-image
+                        = t ".upload-cover"
+                      = f.file_field :cover, id: "cover-input", class: "input-file"
+                      span.file-name
+                      label.control-label
+                        = t ".cover"
+                    .submit-btns
+                      = f.submit t(".update"), class: "btn"
+            .col-lg-3
+              = render "layouts/right-sidebar" 

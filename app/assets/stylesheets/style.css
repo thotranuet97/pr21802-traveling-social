@@ -417,7 +417,8 @@ iframe{
     margin-bottom: 15px;
     margin-top: 15px;
 	display: inline-block;
-	width: 100%;
+    width: 100%;
+    margin-bottom: 30px;
 }
 .log-reg-area.reg{
 	display: none;
@@ -545,13 +546,13 @@ iframe{
 }
 .user-avatar {
     border: 8px solid rgba(255, 255, 255, 0.8);
-    border-radius: 3px 25px 0;
+    border-radius: 50%;
     box-shadow: 0 1px 0 #e1e8ed;
     float: right;
     margin-top: -168px;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    max-width: 100%;
 }
 .user-avatar > figure > img{width: 100%}
 .user-avatar > figure {
@@ -2981,11 +2982,13 @@ a.add-butn.more-action {
 form .form-group.half {
     float: left;
     margin-right: 20px;
+    margin-bottom: 30px;
     width: 46%;
 }
 form .form-group.half {
     float: left;
     margin-right: 10px;
+    margin-bottom: 30px;
     width: 48.2%;
 }
 form .form-group.half:nth-child(2) {
