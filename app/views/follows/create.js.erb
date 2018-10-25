@@ -1,0 +1,3 @@
+$('#follow_user').html('<%= escape_javascript(render partial: "users/follow", locals: {user: @user}) %>');
+$('.follower-count em').html('<%= @user.followers_count %>');
+$('.following-count em').html('<%= @user.follow_count %>');

@@ -21,6 +21,12 @@
       opacity: 0.8;
     }
 }
+.status-btn{
+  font-size: 12px;
+  font-weight: 400;
+  padding: 3px 10px;
+  margin: 0;
+}
 .form-group{
   position: relative;
   input,textarea{
@@ -132,4 +138,71 @@ label{
 }
 .file-name{
   display: block;
+}
+
+.topbar{
+  .setting-area{
+    .dropdowns.show{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+#follow_user{
+  display: inline-block;
+  input[type=submit]{
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 4px 20px;
+    border: 1px solid transparent;
+    background: #088dcd;
+    transition: all ease 0.3s;
+    &:hover{
+      box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
+      opacity: 0.8;
+    }
+  }
+}
+.follow-count{
+  display: inline-block;
+  span{
+    color: #fff;
+    margin-right: 20px;
+    text-shadow: 0 2px 0 #4a4a4a;
+  }
+}
+.top-area{
+  .user-img{
+    img{
+      width: 40px;
+    }
+  }
+}
+.pagy-nav{
+  margin-top: 20px;
+  .page{
+    display: inline-block;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    text-align: center;
+    background: #252525;
+    color: #fff;
+    margin: 0 5px;
+    font-size: 12px;
+    a{
+      display: block;
+      color: #fff;
+    }
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+  .active{
+    opacity: 0.5;
+  }
 }

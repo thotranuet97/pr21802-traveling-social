@@ -32,6 +32,8 @@ gem 'pagy'
 gem 'rails_admin'
 gem 'rails_admin_google_map'
 
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
+
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

@@ -62,7 +62,8 @@ en:
       photos: "Photos"
       reviews: "Reviews"
       about: "About"
-      follow: "Follow"
+      followers: " Followers"
+      followings: " Followings"
   admin:
     locations:
       index: 
@@ -160,3 +161,13 @@ en:
       birthday: "Birthday"
       gender: "Gender"
       about-me: "About me"
+    follow:
+      follow: "Follow"
+      unfollow: "Unfollow"
+      followers: "Followers"
+      followings: "Followings"
+  micro_posts:
+    create:
+      success: "Status created !"
+    form:
+      publish: "Publish"
