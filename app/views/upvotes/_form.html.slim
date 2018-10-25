@@ -1,0 +1,12 @@
+- if current_user.voted_up_on? micro_post
+  = link_to micro_post_upvote_path(micro_post, 0), method: :delete, remote: true do
+    span.like[data-toggle="tooltip" title="#{t('.liked')}"]
+      i.fas.fa-thumbs-up
+      ins
+        = micro_post.get_likes.size
+- else
+  = link_to micro_post_upvotes_path(micro_post), method: :post, remote: true do
+    span.like[data-toggle="tooltip" title="#{t('.like')}"]
+      i.far.fa-thumbs-up
+      ins
+        = micro_post.get_likes.size

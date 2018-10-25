@@ -180,3 +180,19 @@ en:
     micro_post:
       confirm: "Are you sure ?"
       at: "is at"
+  upvotes:
+    create:
+      like: "Like !"
+    destroy:
+      unlike: "Unlike !"
+    form:
+      like: "Like"
+      liked: "Liked"
+  downvotes:
+    create:
+      dislike: "Dislike !"
+    destroy:
+      undislike: "Undislike !"
+    form:
+      dislike: "Dislike"
+      disliked: "Disliked"

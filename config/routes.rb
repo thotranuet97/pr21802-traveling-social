@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update, :destroy] do
       resources :follows, only: [:create, :destroy, :index]
     end
-    resources :micro_posts
+    resources :micro_posts do
+      resources :upvotes, only: [:create, :destroy]
+      resources :downvotes, only: [:create, :destroy]
+    end
     resources :profiles, only: :show
     resources :locations
   end
