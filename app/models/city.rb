@@ -2,7 +2,7 @@ class City < ApplicationRecord
   belongs_to :user
   has_many :locations, inverse_of: :city
   
-  validates :name, presence: true
+  validates :name, :thumbnail, presence: true
   mount_uploader :thumbnail, ImageUploader
 
   extend FriendlyId

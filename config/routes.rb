@@ -19,5 +19,9 @@ Rails.application.routes.draw do
     resources :users, only: :show do
       resources :reviews
     end
+    resources :cities, only: [:show, :index]
+    resources :cities, only: :show do
+      resources :locations, only: [:index, :show]
+    end
   end
 end

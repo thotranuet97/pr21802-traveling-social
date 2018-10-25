@@ -12,7 +12,7 @@ class Location < ApplicationRecord
 
   accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
 
-  validates :name, presence: true
+  validates :name, :thumbnail, :city, presence: true
 
   mount_uploader :thumbnail, ImageUploader
 

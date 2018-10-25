@@ -62,6 +62,7 @@ RailsAdmin.config do |config|
     navigation_icon 'icon-road'
     list do
       field :name
+      field :porpular
       field :thumbnail
       field :city
       field :slug
@@ -69,6 +70,7 @@ RailsAdmin.config do |config|
     end
     edit do
       field :name
+      field :porpular
       field :city
       field :address, :google_map do
         default_latitude 21.027842

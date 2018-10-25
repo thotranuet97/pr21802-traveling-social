@@ -30,6 +30,8 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'cloudinary'
 gem 'pagy'
+gem 'gmaps4rails'
+gem "paranoia", "~> 2.2"
 
 gem 'rails_admin'
 gem 'rails_admin_google_map'

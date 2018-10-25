@@ -19,6 +19,7 @@
 //= require jquery-ui
 //= require ckeditor/init
 //= require cocoon
+//= require gmaps/google
 //= require_tree .
 
 $(document).on("turbolinks:load", function () {
@@ -31,7 +32,7 @@ $(document).on("turbolinks:load", function () {
 
   // Auotocomplete location status
   $autocomplete = function () {
-    $(".checkin-location").autocomplete({
+    $auto = $(".checkin-location").autocomplete({
       source: function (request, response) {
         $.getJSON("/locations.json?s=" + request.term, function (data) {
           response($.map(data.locations, function (value, key) {
@@ -53,22 +54,25 @@ $(document).on("turbolinks:load", function () {
         $(this).parent().find(".location_value").val(ui.item.value);
         return false;
       }
-    }).data("ui-autocomplete")._renderItem = function (ul, item) {
-      if (!item.image) {
-        var thumb = "https://via.placeholder.com/50";
-      }
-      else {
-        var thumb = item.image;
-      }
-      var markup = [
-        "<span><img src='" + thumb + "' width='50'/></span>",
-        "<span><b>" + item.label + "</b></span>",
-      ]
-      return $("<li>")
-        .data("item.autocomplete", item)
-        .append(markup.join(''))
-        .appendTo(ul);
-    };
+    })
+    if ($auto.data("ui-autocomplete")) {
+      $auto.data("ui-autocomplete")._renderItem = function (ul, item) {
+        if (!item.image) {
+          var thumb = "https://via.placeholder.com/50";
+        }
+        else {
+          var thumb = item.image;
+        }
+        var markup = [
+          "<span><img src='" + thumb + "' width='50'/></span>",
+          "<span><b>" + item.label + "</b></span>",
+        ]
+        return $("<li>")
+          .data("item.autocomplete", item)
+          .append(markup.join(''))
+          .appendTo(ul);
+      };
+    }
   }
   $autocomplete();
 
@@ -82,4 +86,23 @@ $(document).on("turbolinks:load", function () {
       dataType: "script",
     })
   });
+
+  handler = Gmaps.build('Google');
+  if (handler) {
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers([  
+        {  
+          "lat": $("#map").data("latitude"),  
+          "lng": $("#map").data("longitude"),  
+          "picture": {  
+            "width":  32,  
+            "height": 32  
+          },  
+          "infowindow": "SJSU"  
+        }  
+      ]);  
+      handler.bounds.extendWith(markers);  
+      handler.fitMapToBounds();  
+    });
+  }
 });

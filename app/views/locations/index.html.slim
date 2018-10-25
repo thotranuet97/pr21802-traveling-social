@@ -1,0 +1,39 @@
+.page-header
+  .header-inner
+    h2
+      = params[:city_id].present? ? @city.name : t(".all-locations")
+.gap.gray-bg
+  #page-contents.row.justify-content-center
+    .col-lg-8
+      - if params[:city_id].present?
+        .central-meta.padding-50
+          h3.title-show-location
+            = @city.name
+          .content-show-location
+            = raw @city.description
+          #map[data=eval(@city.address)["location"]]
+      .central-meta
+        .card-deck
+          - @locations.each do |location|
+            .card.item-location
+              = link_to location_path location do
+                .card-img-wrapper
+                  - if location.porpular.present?
+                    span.popular
+                      = t ".location-popular"
+                  = image_tag location.thumbnail_url, class: "card-img-top"
+                  span.city
+                    i.fas.fa-map-marker-alt
+                    = location.city.name
+                .card-body
+                  h5.card-title
+                    = location.name
+                  p.card-text
+                    i.fas.fa-sun
+                    = t ".location-review"
+                    = location.reviews.count
+                  p.card-text
+                    i.fas.fa-check
+                    = t ".location-checkin"
+                    = location.micro_posts.count  
+      == pagy_nav @pagy if @pagy.present?

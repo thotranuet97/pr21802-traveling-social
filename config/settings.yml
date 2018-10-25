@@ -1,3 +1,7 @@
 users:
   follow:
     per_page: 20
+cities:
+  per_page: 15
+locations:
+  per_page: 20
