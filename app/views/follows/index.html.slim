@@ -30,11 +30,11 @@ section
                           li
                             .nearly-pepls
                               figure
-                                a[href="time-line.html" title=""]
+                                = link_to user_path follower.id do
                                   = image_tag follower.thumbnail.present? ? follower.thumbnail_url : "avatar.png"
                               .pepl-info
                                 h4
-                                  = link_to user_path(follower.id) do
+                                  = link_to user_path follower.id do
                                     - if follower.first_name.present?
                                       = follower.first_name + " " + follower.last_name
                                     - else
@@ -46,11 +46,11 @@ section
                           li
                             .nearly-pepls
                               figure
-                                a[href="time-line.html" title=""]
+                                = link_to user_path following.id do
                                   = image_tag following.thumbnail.present? ? following.thumbnail_url : "avatar.png"
                               .pepl-info
                                 h4
-                                  = link_to user_path(following.id) do
+                                  = link_to user_path following.id do
                                     - if following.first_name.present?
                                       = following.first_name + " " + following.last_name
                                     - else

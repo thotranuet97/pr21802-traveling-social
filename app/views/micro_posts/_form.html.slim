@@ -1,27 +1,23 @@
 .central-meta.item
   .new-postbox
     figure
-      img[src="#" alt=""]
+      = image_tag @user.thumbnail.present? ? @user.thumbnail_url : "avatar.png"
     .newpst-input
-      = form_for @micro_post do |f|
-        = f.text_area :content
+      = form_for @micro_post, remote: true do |f|
+        = render 'shared/error_validate_msg', object: f.object
+        = f.text_area :content, placeholder: t(".thinking")
         .attachments
+          .check_in
+            i.fas.fa-map-marker-alt
+            = text_field_tag "checkin-location","", class: "form-control checkin-location", placeholder: t(".check-in"), id: "checkin-location-#{@micro_post.id}"
+            = f.text_field :location_id, class: "location_value", type: "hidden"
           ul
-            li
-              i.fas.fa-music
-              label.fileContainer
-                input[type="file"]
             li
               i.fas.fa-image
               label.fileContainer
-                input[type="file"]
-            li
-              i.fas.fa-video
-              label.fileContainer
-                input[type="file"]
-            li
-              i.fas.fa-camera
-              label.fileContainer
-                input[type="file"]
+                = f.file_field :image, class: "input-file" 
+                span.file-name
+                  = @micro_post.image_identifier if @micro_post.image?
+                = f.hidden_field  :image_cache
             li
               = f.submit t(".publish"), class: "btn status-btn"

@@ -169,5 +169,14 @@ en:
   micro_posts:
     create:
       success: "Status created !"
+    destroy:
+      success: "Status deleted !"
+    update:
+      success: "Status updated !"
     form:
       publish: "Publish"
+      check-in: "Check-in now"
+      thinking: "What are you thinking ?"
+    micro_post:
+      confirm: "Are you sure ?"
+      at: "is at"

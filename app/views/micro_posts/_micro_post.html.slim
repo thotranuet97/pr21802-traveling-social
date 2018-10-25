@@ -1,0 +1,48 @@
+div class="central-meta .item" id="status-#{micro_post.id}"
+  .user-post
+    .friend-info
+      figure
+        = image_tag micro_post.user.thumbnail.present? ? micro_post.user.thumbnail_url : "avatar.png"
+      .friend-name
+        ins
+          a[href="time-line.html" title=""]
+            - if micro_post.user.first_name.present?
+              = micro_post.user.first_name + " " + micro_post.user.last_name
+            - else
+              = micro_post.user.email
+        - if micro_post.location.present?
+          span.check-in
+            = t ".at"
+            = link_to micro_post.location.name, location_path(micro_post.location), class: "check-in-link"
+        span
+          = time_ago_in_words micro_post.user.created_at
+      - if user_signed_in? && current_user?(@user)
+        .buttons
+          ul
+            li
+              a class="edit" data-status-id="#{micro_post.id}" 
+                i.fas.fa-edit
+            li
+              = link_to micro_post, method: :delete, data: { confirm: t(".confirm") }, remote: true do
+                i.fas.fa-trash-alt
+      .post-meta
+        img[src="#" alt=""]
+        .we-video-info
+          ul
+            li
+              span.comment[data-toggle="tooltip" title="Comments"]
+                i.far.fa-comments
+                ins
+                  | 52
+            li
+              span.like[data-toggle="tooltip" title="like"]
+                i.fas.fa-heart
+                ins
+                  | 2.2k
+            li
+              span.dislike[data-toggle="tooltip" title="dislike"]
+                i.fas.fa-heartbeat
+                ins
+                  | 200
+        = render "micro_posts/micro_post-content", micro_post: micro_post
+        .edit-form

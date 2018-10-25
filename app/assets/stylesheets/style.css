@@ -1047,7 +1047,6 @@ form button {
 .friend-name > ins {
     float: left;
     font-weight: 700;
-    width: 100%;
     font-size: 20px;
     text-decoration: none;
 }
