@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: thotranuet97
+  api_key: '965572418367488'
+  api_secret: _scR5bFm0eMG4zCJSwCa24m0O-0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: thotranuet97
+  api_key: '965572418367488'
+  api_secret: _scR5bFm0eMG4zCJSwCa24m0O-0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: thotranuet97
+  api_key: '965572418367488'
+  api_secret: _scR5bFm0eMG4zCJSwCa24m0O-0
+  enhance_image_tag: true
+  static_image_support: false

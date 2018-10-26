@@ -10,6 +10,7 @@ RailsAdmin.config do |config|
 
   ## == Cancan ==
   config.authorize_with :cancancan
+  config.parent_controller = 'ApplicationController'
 
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -131,11 +132,6 @@ RailsAdmin.config do |config|
   end
 
   config.model Image do
-    visible false
-  end
-
-
-  config.model Profile do
     visible false
   end
 

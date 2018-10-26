@@ -15,7 +15,7 @@
   .timeline-info > ul li a::after{bottom: -17px;}
 }
  @media screen and (max-width: 1600px) and (min-width: 1400px){
-  .user-avatar{top: -33px;}
+  .user-avatar{top: -15px;}
   #people-list figure{width: 18.5%;}
   .chat-box{right: 294px;}
   .edit-phto{left: 315px; bottom: 125px;}

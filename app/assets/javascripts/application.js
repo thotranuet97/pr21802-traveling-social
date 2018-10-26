@@ -19,3 +19,10 @@
 //= require ckeditor/init
 //= require cocoon
 //= require_tree .
+
+$(document).on("turbolinks:load", function () {
+  $(".input-file").change(function () {
+    $(this).next().text(this.files[0].name);
+    console.log(this);
+  });
+});

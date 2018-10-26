@@ -1,0 +1,39 @@
+= render "layouts/user-header"
+section
+  .gap.gray-bg
+    .container-fluid
+      .row
+        .col-lg-12
+          #page-contents.row
+            .col-lg-3
+              = render "layouts/left-sidebar" 
+            .col-lg-6
+              = render "shared/error_msg"
+              .central-meta
+                .about
+                  .personal
+                    h5.f-title
+                      i.fas.fa-user-circle
+                      = t ".personal-info"
+                    p
+                      span
+                        i.fas.fa-mobile-alt
+                        = t ".phone"
+                      = @user.phone
+                    p
+                      span
+                        i.fas.fa-birthday-cake
+                        = t ".birthday"
+                      = @user.birtday
+                    p
+                      span
+                        i.fas.fa-transgender-alt
+                        = t ".gender"
+                      = @user.gender
+                    h5.f-title
+                      i.fas.fa-info-circle
+                      = t ".about-me"
+                    p
+                      = @user.about
+            .col-lg-3
+              = render "layouts/right-sidebar" 

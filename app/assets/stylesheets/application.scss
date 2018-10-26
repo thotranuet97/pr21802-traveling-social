@@ -3,3 +3,133 @@
 @import "style";
 @import "color";
 @import "responsive";
+
+// Custom here
+.btn{
+  position: relative;
+    background: #088DCD;
+    border: 1px solid #088DCD;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+    padding: 7px 30px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    font-weight: 600;
+    border-radius: 0;
+    &:hover{
+      box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
+      opacity: 0.8;
+    }
+}
+.form-group{
+  position: relative;
+  input,textarea{
+    display: block;
+    background: 0 0;
+    padding: .125rem .125rem .0625rem;
+    font-size: 1rem;
+    border-width: 0;
+    border-color: transparent;
+    line-height: 1.9;
+    width: 100%;
+    color: transparent;
+    transition: all .28s ease;
+    box-shadow: none;
+    &:focus{
+      .control-label{
+        color: #088dcd;
+        font-size: .8rem;
+        top: -1rem;
+        left: 0;
+      }
+      .mtrl-select:before{
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+  input{
+    height: 1.9rem;
+  }
+  .control-label{
+    color: #088dcd;
+    font-size: .8rem;
+    top: -25px;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    padding-left: .125rem;
+    z-index: 1;
+    font-weight: 400;
+    transition: all .28s ease;
+  }
+  .mtrl-select{
+    position: relative;
+    border-bottom: .0625rem solid #e1e8ed;
+    display: block;
+  }
+  .mtrl-select:before{
+    content: '';
+    height: .125rem;
+    width: 0;
+    left: 50%;
+    bottom: -.0625rem;
+    position: absolute;
+    background: #088dcd;
+    transition: left .28s ease,width .28s ease;
+    z-index: 2;
+  }
+  .radio{
+    display: inline-block;
+    width: 20%;
+  }
+  input[type=radio]{
+    display: inline-block;
+    margin-bottom: 0;
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+  }
+  input[type=file]{
+    height: auto;
+    display: none;
+  }
+  .file-wrapper{
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(#000, 0.7);
+    padding: 0 15px;
+    color: #fff;
+    font-size: 11px;
+    margin-top: 10px;
+    transition: all ease 0.3s;
+    &:hover{
+      box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
+      opacity: 0.6;
+    }
+    i{
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }
+}
+label{
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+.about .personal{
+  p{
+    span{
+      font-weight: 600;
+      color: #252525;
+      margin-right: 15px;
+      i{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.file-name{
+  display: block;
+}

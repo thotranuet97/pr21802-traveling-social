@@ -1,0 +1,39 @@
+section
+  .feature-photo
+    figure
+      = image_tag @user.cover.present? ? @user.cover_url : "1366x400.png"
+    .add-btn
+      span
+        | 1205 followers
+      a[href="#" title="" data-ripple=""]
+        = t ".follow"
+    form.edit-phto
+      i.fa.fa-camera-retro
+      label.fileContainer
+        = t ".edit-cover"
+        input[type="file"]
+    .container-fluid
+      .row.merged
+        .col-lg-2.col-sm-3
+          .user-avatar
+            figure
+              = image_tag @user.thumbnail.present? ? @user.thumbnail_url : "avatar.png"
+        .col-lg-10.col-sm-9
+          .timeline-info
+            ul
+              li.admin-name
+                h5
+                  - if @user.first_name.present?
+                    = @user.first_name + " " + @user.last_name
+                  - else
+                    = @user.email
+              li
+                a[href="time-line.html" title="" data-ripple=""]
+                  = t ".timelines"
+                a[href="timeline-photos.html" title="" data-ripple=""]
+                  = t ".photos"
+                a[href="timeline-videos.html" title="" data-ripple=""]
+                  = t ".reviews"
+                a[href="timeline-friends.html" title="" data-ripple=""]
+                  = t ".follow"
+                = link_to t(".about"), user_path(current_user)
