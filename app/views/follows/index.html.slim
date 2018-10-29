@@ -1,0 +1,59 @@
+= render "layouts/user-header"
+section
+  .gap.gray-bg
+    .container-fluid
+      .row
+        .col-lg-12
+          #page-contents.row
+            .col-lg-3
+              = render "layouts/left-sidebar" 
+            .col-lg-6
+              = render "shared/error_msg"
+              .central-meta
+                .frnds
+                  ul.nav.nav-tabs
+                    li.nav-item
+                      a.active.show[href="#follower" data-toggle="tab"]
+                        = t ".followers"
+                      span
+                        = @user.followers_count
+                    li.nav-item
+                      a[href="#following" data-toggle="tab"]
+                        = t "followings"
+                      span
+                        = @user.follow_count
+                  .tab-content
+                    #follower.tab-pane.fade.active.show
+                      == pagy_nav @pagy if @pagy.present?
+                      ul.nearby-contct
+                        - @followers.each do |follower|
+                          li
+                            .nearly-pepls
+                              figure
+                                a[href="time-line.html" title=""]
+                                  = image_tag follower.thumbnail.present? ? follower.thumbnail_url : "avatar.png"
+                              .pepl-info
+                                h4
+                                  = link_to user_path(follower.id) do
+                                    - if follower.first_name.present?
+                                      = follower.first_name + " " + follower.last_name
+                                    - else
+                                      = follower.email
+                    #following.tab-pane.fade
+                      == pagy_nav @pagy if @pagy.present?
+                      ul.nearby-contct
+                        - @followings.each do |following|
+                          li
+                            .nearly-pepls
+                              figure
+                                a[href="time-line.html" title=""]
+                                  = image_tag following.thumbnail.present? ? following.thumbnail_url : "avatar.png"
+                              .pepl-info
+                                h4
+                                  = link_to user_path(following.id) do
+                                    - if following.first_name.present?
+                                      = following.first_name + " " + following.last_name
+                                    - else
+                                      = following.email
+            .col-lg-3
+              = render "layouts/right-sidebar" 

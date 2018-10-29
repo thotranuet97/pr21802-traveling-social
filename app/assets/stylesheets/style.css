@@ -470,7 +470,10 @@ iframe{
     vertical-align: top;
     z-index: 2;
 }
-.top-area > ul > li > a{color: #999;}
+.top-area > ul > li > a{
+    color: #999;
+    font-size: 20px;
+}
 .top-area .user-img {
     cursor: pointer;
     display: inline-block;
@@ -552,7 +555,7 @@ iframe{
     margin-top: -168px;
     overflow: hidden;
     position: relative;
-    max-width: 100%;
+    max-width: 260px;
 }
 .user-avatar > figure > img{width: 100%}
 .user-avatar > figure {

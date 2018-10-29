@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by id: params[:id]
+    @micro_post = MicroPost.new
   end
 
   def edit
@@ -21,7 +22,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit :thumbnail, :first_name, :last_name, :phone, :birtday, :gender, :about, :cover
+    params.require(:user).permit :thumbnail, :first_name, :last_name, :phone,
+      :birtday, :gender, :about, :cover
   end
 
   def correct_user
@@ -32,4 +34,5 @@ class UsersController < ApplicationController
   def current_user? user
     user == current_user
   end
+
 end

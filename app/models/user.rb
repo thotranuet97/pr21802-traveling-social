@@ -14,4 +14,7 @@ class User < ApplicationRecord
   enum gender: {male: 1, female: 0, other: 2}
   mount_uploader :thumbnail, ImageUploader
   mount_uploader :cover, ImageUploader
+
+  acts_as_followable
+  acts_as_follower
 end

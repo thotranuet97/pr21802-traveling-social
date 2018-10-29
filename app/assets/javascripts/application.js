@@ -25,4 +25,7 @@ $(document).on("turbolinks:load", function () {
     $(this).next().text(this.files[0].name);
     console.log(this);
   });
+  $('.setting-area li a').on('click', function () {
+    $(this).next().toggleClass('show');
+  });
 });
