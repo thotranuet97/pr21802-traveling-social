@@ -5,6 +5,9 @@
 @import "responsive";
 
 // Custom here
+a{
+  cursor: pointer;
+}
 .btn{
   position: relative;
     background: #088DCD;
@@ -204,5 +207,93 @@ label{
   }
   .active{
     opacity: 0.5;
+  }
+}
+.attachments{
+  display: flex;
+  justify-content: space-between;
+  .form-control{
+    width: auto;
+    height: 30px;
+    background: #fefefe;
+    border-color: #ebebeb;
+    border-radius: 0;
+    padding: 5px 25px;
+    &::-webkit-input-placeholder {
+      font-size: 12px;
+    }
+    &::-moz-placeholder {
+      font-size: 12px;
+    }
+    &:-ms-input-placeholder {
+      font-size: 12px;
+    }
+    &:-moz-placeholder {
+      font-size: 12px;
+    }
+  }
+  .check_in{
+    position: relative;
+    i{
+      position: absolute;
+      left: 10px;
+      font-size: 12px;
+      top: 10px;
+    }
+  }
+}
+.ui-menu-item{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  .ui-menu-item-wrapper{
+    display: inline-block;
+    overflow: hidden;
+  }
+  .ui-state-active{
+    background: transparent;
+  }
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    border: 1px solid transparent;
+    font-weight: normal;
+    color: #333;
+    text-decoration: underline;
+}
+.buttons{
+  position: absolute;
+  top: 0;
+  right: 0;
+  button{
+    background: none;
+    border: none;
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    li{
+      list-style: none;
+      display: inline-block;
+      margin: 0 5px;
+      a:hover{
+        color: #007bff;
+      }
+    }
+  }
+}
+.friend-name{
+  .check-in{
+    margin-left: 20px;
+    width: auto;
+    line-height: 35px;
+  }
+  .check-in-link{
+    color: #007bff;
+    margin-left: 5px;
   }
 }

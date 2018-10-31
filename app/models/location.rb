@@ -24,5 +24,5 @@ class Location < ApplicationRecord
   end
 
   serialize :address, JSON
-
+  scope :search_location, -> (search_content) {where("name like ?","%#{search_content}%")}
 end

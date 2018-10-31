@@ -4,6 +4,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by id: params[:id]
     @micro_post = MicroPost.new
+    @micro_posts = @user.micro_posts.includes(:user, :location).order_created_desc
+
+    if params[:id_status]
+      @micro_post = MicroPost.find_by id: params[:id_status]
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    end
   end
 
   def edit
@@ -33,6 +42,5 @@ class UsersController < ApplicationController
 
   def current_user? user
     user == current_user
-  end
-
+  end  
 end

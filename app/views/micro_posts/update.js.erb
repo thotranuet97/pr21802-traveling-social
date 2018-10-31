@@ -1,0 +1,2 @@
+$("#status-<%= @micro_post.id %> .description").replaceWith("<%= escape_javascript(render('micro_posts/micro_post-content', micro_post: @micro_post)) %>");
+$("#status-<%= @micro_post.id %> .central-meta").remove()
