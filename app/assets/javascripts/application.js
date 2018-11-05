@@ -30,7 +30,7 @@ $(document).on("turbolinks:load", function () {
   });
 
   // Auotocomplete location status
-  $autocomplete = function() {
+  $autocomplete = function () {
     $(".checkin-location").autocomplete({
       source: function (request, response) {
         $.getJSON("/locations.json?s=" + request.term, function (data) {
@@ -71,7 +71,7 @@ $(document).on("turbolinks:load", function () {
     };
   }
   $autocomplete();
-  //
+
   $(".buttons a.edit").on("click", function () {
     var status_id = $(this).attr('data-status-id');
     $.ajax({

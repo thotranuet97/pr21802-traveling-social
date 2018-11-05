@@ -1,0 +1,12 @@
+- if current_user.voted_down_on? micro_post
+  = link_to micro_post_downvote_path(micro_post, 0), method: :delete, remote: true do
+    span.like[data-toggle="tooltip" title="#{t('.disliked')}"]
+      i.fas.fa-thumbs-down
+      ins
+        = micro_post.get_dislikes.size
+- else
+  = link_to micro_post_downvotes_path(micro_post), method: :post, remote: true do
+    span.like[data-toggle="tooltip" title="#{t('.dislike')}"]
+      i.far.fa-thumbs-down
+      ins
+        = micro_post.get_dislikes.size

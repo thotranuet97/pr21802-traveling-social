@@ -26,23 +26,17 @@ div class="central-meta .item" id="status-#{micro_post.id}"
               = link_to micro_post, method: :delete, data: { confirm: t(".confirm") }, remote: true do
                 i.fas.fa-trash-alt
       .post-meta
-        img[src="#" alt=""]
-        .we-video-info
-          ul
-            li
-              span.comment[data-toggle="tooltip" title="Comments"]
-                i.far.fa-comments
-                ins
-                  | 52
-            li
-              span.like[data-toggle="tooltip" title="like"]
-                i.fas.fa-heart
-                ins
-                  | 2.2k
-            li
-              span.dislike[data-toggle="tooltip" title="dislike"]
-                i.fas.fa-heartbeat
-                ins
-                  | 200
         = render "micro_posts/micro_post-content", micro_post: micro_post
+        - if user_signed_in?
+          .we-video-info#vote_form
+            ul
+              li
+                span.comment[data-toggle="tooltip" title="Comments"]
+                  i.far.fa-comments
+                  ins
+                    | 52
+              li.upvotes
+                = render "upvotes/form", micro_post: micro_post
+              li.downvotes
+                = render "downvotes/form", micro_post: micro_post
         .edit-form

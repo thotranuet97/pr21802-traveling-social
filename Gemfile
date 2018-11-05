@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-ui-rails'
+gem 'acts_as_votable', '~> 0.11.1'
 
 gem 'devise'
 gem 'cancancan'
