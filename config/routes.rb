@@ -13,5 +13,11 @@ Rails.application.routes.draw do
     end
     resources :profiles, only: :show
     resources :locations
+    resources :locations, only: :show do
+      resources :reviews
+    end
+    resources :users, only: :show do
+      resources :reviews
+    end
   end
 end

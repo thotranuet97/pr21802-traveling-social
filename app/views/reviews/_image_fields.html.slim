@@ -1,0 +1,11 @@
+.nested-fields
+  .field
+    .row
+      .col-md
+        = link_to_remove_association "", f, class: "far fa-trash-alt"
+      .col-md
+          = f.file_field :image
+          = f.hidden_field :image_cache, value: f.object.image_cache
+      .col-md
+        - if f.object.image.url.present?
+        = image_tag f.object.image.url
