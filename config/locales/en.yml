@@ -233,3 +233,13 @@ en:
     show:
       new_review: "New Review"
       reviews_list: "Reviews List"
+  cities:
+    index:
+      cities: "List of cities"
+      locations: " locations"
+  locations:
+    index:
+      all-locations: "All locations"
+      location-review: "Total reviews: "
+      location-checkin: "Total check-in: "
+      location-popular: "Popular !"

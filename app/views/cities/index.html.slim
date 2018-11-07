@@ -1,0 +1,19 @@
+.page-header
+  .header-inner
+    h2
+      = t ".cities"
+.gap.gray-bg
+  #page-contents.row.justify-content-center
+    .col-lg-8
+      .central-meta.card-columns
+        - @cities.each do |city|
+          .card.text-white.item-city
+            = link_to city_locations_path city do
+              = image_tag city.thumbnail_url, class: "card-img"
+              .card-img-overlay
+                h4.card-title
+                  = city.name
+                span.card-text
+                  = city.locations.count
+                  = t ".locations"
+      == pagy_nav @pagy if @pagy.present?

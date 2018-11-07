@@ -18,4 +18,5 @@ class User < ApplicationRecord
   acts_as_followable
   acts_as_follower
   acts_as_voter
+  acts_as_paranoid
 end
