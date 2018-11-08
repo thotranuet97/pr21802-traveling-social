@@ -8,6 +8,11 @@ class MicroPostsController < ApplicationController
         format.html do
           redirect_to user_path(current_user), success: t(".success")
         end
+      else
+        format.html do
+          flash[:danger] = @micro_post.errors.full_messages
+          redirect_back fallback_location: root_path
+        end
       end
     end
   end

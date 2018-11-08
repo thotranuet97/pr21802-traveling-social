@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_location, only: [:create, :new]
+  before_action :set_location, only: [:create, :new, :index]
   before_action :set_review, except: [:create, :new, :index]
   def new
     @review = @location.reviews.build
@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.location = @location
     if @review.save
       flash[:info] = t ".review_created"
-      redirect_to location_review_path(@location, @review)
+      redirect_to review_path(@location, @review)
     else
       flash[:alert] = t ".review_created_error"
       render :new
@@ -19,7 +19,6 @@ class ReviewsController < ApplicationController
 
   def index
     if params[:location_id].present?
-      @location = Location.friendly.find params[:location_id]
       @pagy, @reviews = pagy_array @location.reviews, 
         items: Settings.reviews.per_page
     else
@@ -29,8 +28,10 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @location = Location.friendly.find params[:location_id]
+    @location = @review.location
     @review.punch request
+    @pagy, @comments = pagy_array @review.comments.order_created_desc, 
+        items: Settings.comments.per_page
   end
 
   def edit
@@ -38,7 +39,7 @@ class ReviewsController < ApplicationController
   
   def update
     if @review.update_attributes review_params
-      redirect_to location_review_path(@review.location, @review),
+      redirect_to review_path(@review.location, @review),
         notice: t(".review_updated")
     else
       render :edit

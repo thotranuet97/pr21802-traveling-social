@@ -7,3 +7,5 @@ locations:
   per_page: 20
 reviews:
   per_page: 20
+comments:
+  per_page: 5

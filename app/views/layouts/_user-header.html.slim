@@ -40,7 +40,6 @@ section
                 = link_to t(".timlines"), user_path(@user.id)
                 a[href="timeline-photos.html" title="" data-ripple=""]
                   = t ".photos"
-                a[href="timeline-videos.html" title="" data-ripple=""]
-                  = t ".reviews"
+                = link_to t(".review"), user_reviews_path(@user)
                 = link_to t(".follow"), user_follows_path(@user.id)
                 = link_to t(".about"), profile_path(@user.id)

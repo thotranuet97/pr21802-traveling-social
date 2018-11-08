@@ -180,7 +180,11 @@ en:
       check-in: "Check-in now"
       thinking: "What are you thinking ?"
     micro_post:
+      comments: "Comments"
       confirm: "Are you sure ?"
+      comment-add: "Add comment"
+      comment-placeholder: "Place comment here..."
+    micro_post-link:
       at: "is at"
   upvotes:
     create:
@@ -225,6 +229,9 @@ en:
       views: "Views"
       comments: "Comments"
       view-location: "View location"
+      comment-add: "Add comment"
+      comment-placeholder: "Place comment here..."
+      leave-a-comment: "Leave a comment:"
     edit:
       edit_review: "Edit review"
     new:
@@ -257,3 +264,19 @@ en:
     index:
       cities: "List of cities"
       locations: " locations"
+  comments:
+    create:
+      success: "Comment has been created!"
+    comment:
+      submitted: "Submitted "
+      ago: " ago"
+      add-a-reply: "Add a reply"
+      add-a-edit: "Add a edit"
+      reply: "Reply"
+      edit: "Edit"
+      confirm: "Are you sure ?"
+      delete: "Delete"
+    destroy:
+      delete: "Comment has been deleted!"
+    update:
+      update: "Comment has been deleted!"

@@ -65,7 +65,7 @@ $(document).on("turbolinks:load", function () {
           }));
         });
       },
-      minLength: 3,
+      minLength: 2,
       delay: 100,
       focus: function (event, ui) {
         $(this).val(ui.item.label);
