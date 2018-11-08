@@ -12,5 +12,6 @@ class LocationsController < ApplicationController
   end
   def show
     @location = Location.friendly.find params[:id]
+    @location.punch request
   end
 end

@@ -206,26 +206,37 @@ en:
       thumbnail: "Thumbnail"
       post: "Post"
       upload_thumbnail: "Upload thumbnail"
-      add_a_photo: "Add a photo"
+      add_a_photo: "Add images"
       remove: "Remove"
     review:
       edit: "Edit"
       delete: "Delete"
       confirm: "Are you sure?"
       published: "Published: "
+      delete: "Delete"
+      edit: "Edit"
+      views: "Views"
+      comments: "Comments"
+      view-location: "View location"
     show:
       published: "Published: "
+      delete: "Delete"
+      edit: "Edit"
+      views: "Views"
+      comments: "Comments"
+      view-location: "View location"
     edit:
       edit_review: "Edit review"
     new:
       new_review: "New review"
     index:
       publish: "Publish"
-    created:
+      all-reviews: "Reviews"
+    create:
       review_created: "Review created!"
       review_created_error: "Review created error"
     update:
-      update_review: "Review updated!"
+      review_updated: "Review updated!"
     destroy:
       confirm: "Are you sure?"
       review_deleted: "Review deleted!"
@@ -233,13 +244,16 @@ en:
     show:
       new_review: "New Review"
       reviews_list: "Reviews List"
-  cities:
-    index:
-      cities: "List of cities"
-      locations: " locations"
-  locations:
+      location-review: "Total reviews: "
+      location-checkin: "Total check-in: "
+      location-checkin-user: "Total users check-in: "
+      location-views: "Total views: "
     index:
       all-locations: "All locations"
       location-review: "Total reviews: "
       location-checkin: "Total check-in: "
       location-popular: "Popular !"
+  cities:
+    index:
+      cities: "List of cities"
+      locations: " locations"

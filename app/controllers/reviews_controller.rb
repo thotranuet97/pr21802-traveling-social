@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_location, only: [:create, :new, :index]
+  before_action :set_location, only: [:create, :new]
   before_action :set_review, except: [:create, :new, :index]
   def new
     @review = @location.reviews.build
@@ -19,13 +19,18 @@ class ReviewsController < ApplicationController
 
   def index
     if params[:location_id].present?
-      @reviews = @location.reviews
+      @location = Location.friendly.find params[:location_id]
+      @pagy, @reviews = pagy_array @location.reviews, 
+        items: Settings.reviews.per_page
     else
-      @reviews = current_user.reviews
+      @pagy, @reviews = pagy_array current_user.reviews, 
+        items: Settings.reviews.per_page
     end
   end
 
   def show
+    @location = Location.friendly.find params[:location_id]
+    @review.punch request
   end
 
   def edit

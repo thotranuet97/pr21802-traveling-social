@@ -11,7 +11,8 @@
             = @city.name
           .content-show-location
             = raw @city.description
-          #map[data=eval(@city.address)["location"]]
+          - if @city.address.present?
+            #map[data=eval(@city.address)["location"]]
       .central-meta
         .card-deck
           - @locations.each do |location|
