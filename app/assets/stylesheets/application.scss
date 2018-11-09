@@ -1,7 +1,11 @@
 @import "bootstrap";
+@import "social-share-button";
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
 @import "style";
 @import "color";
+@import "owl.carousel.min";
+@import "owl.theme.default.min";
+@import "lightbox.min";
 @import "responsive";
 
 // Custom here
@@ -300,6 +304,17 @@ a.ui-button:active,
     margin-left: 5px;
   }
 }
+.item-show-review{
+  .friend-name{
+    a{
+    background-image: linear-gradient(127deg, #0c4fff, #c24efe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 8px;
+    }
+  }
+}
 
 label.review_thumbnail{
   margin: 0!important;
@@ -399,6 +414,12 @@ label.review_thumbnail{
       color: #fff;
     }
   }
+  &.show-location{
+    background-image: image-url("show-bg.jpg");
+  }
+  &.edit-review{
+    background-image: image-url("review-bg.jpg");
+  }
 }
 .item-city{
   .card-title{
@@ -415,4 +436,87 @@ label.review_thumbnail{
 #map{
   width: 100%;
   height: 400px;
+}
+.show-location{
+  .title{
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #252525;
+    text-align: center;
+  }
+  .meta{
+    padding: 0;
+    li{
+      list-style: none;
+      display: inline-block;
+      margin-right: 30px;
+      background-image: linear-gradient(127deg,#0c4fff,#c24efe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      i{
+        margin-right: 5px;
+        background-image: linear-gradient(127deg,#0c4fff,#c24efe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      a{
+        font-weight: 600;
+      }
+    }
+  }
+}
+.meta-total{
+  padding: 0;
+  li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    color: #8c8b8b;
+    font-size: 13px;
+    font-weight: 600;
+    i{
+      color: #dc3545;
+      margin-right: 10px;
+    }
+  }
+}
+.show-slider{
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.social-share{
+  margin-top: 50px;
+}
+.we-video-info{
+  li{
+    a{
+      font-size: 14px;
+      font-weight: 400;
+    }
+    i{
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }
+}
+.review-content{
+  .title{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .meta{
+    padding: 0;
+    margin-bottom: 0;
+    li{
+      display: inline-block;
+      list-style: none;
+      font-size: 12px;
+      margin-right: 20px;
+      i{
+        margin-right: 8px;
+      }
+    }
+  }
 }

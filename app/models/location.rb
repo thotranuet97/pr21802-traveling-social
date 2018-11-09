@@ -10,6 +10,8 @@ class Location < ApplicationRecord
     end
   end
 
+  acts_as_punchable
+
   accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
 
   validates :name, :thumbnail, :city, presence: true

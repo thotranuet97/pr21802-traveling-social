@@ -8,7 +8,9 @@ class Review < ApplicationRecord
 
   validates :name, presence: true
   mount_uploader :thumbnail, ImageUploader
-  
+
+  acts_as_punchable
+
   extend FriendlyId
   friendly_id :name, use: :slugged
   

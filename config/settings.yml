@@ -5,3 +5,5 @@ cities:
   per_page: 15
 locations:
   per_page: 20
+reviews:
+  per_page: 20

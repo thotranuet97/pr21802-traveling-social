@@ -1,16 +1,11 @@
-section
-  .gap.gray-bg
-    .container-fluid
-      .row
-        .col-lg-12
-          #page-contents.row
-            .col-lg-3
-
-            .col-lg-6
-              .central-meta
-                .editing-info
-                  h5.f-title
-                    i.ti-info-alt
-                    = t ".edit_review"
-                  = render "form", review: @review
-            .col-lg-3
+.page-header.edit-review
+  .header-inner
+    h2
+      = t ".edit_review"
+.gap.gray-bg
+  .row#page-contents.justify-content-center
+    .col-lg-10
+      .central-meta.padding-50.show-location
+        h2.title
+          = @review.name
+        = render "form", review: @review

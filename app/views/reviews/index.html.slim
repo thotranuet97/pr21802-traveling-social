@@ -1,39 +1,9 @@
-section
-  .gap.gray-bg
-    .container-fluid
-      .row
-        .col-lg-12
-          .row#page-contents
-            .col-lg-3
-            .col-lg-6
-              .loadMore
-                .central-meta.item
-                  .new-postbox
-                    figure
-                      = link_to image_tag(current_user.thumbnail_url), user_path(current_user)
-                    .newpst-input
-                      form[method="post"]
-                        textarea[rows="2" placeholder="write something"]
-                        .attachments
-                          ul
-                            li
-                              i.fa.fa-music
-                              label.fileContainer
-                                input type="file"
-                            li
-                              i.fa.fa-image
-                              label.fileContainer
-                                input[type="file"]
-                            li
-                              i.fa.fa-video-camera
-                              label.fileContainer
-                                input[type="file"]
-                            li
-                              i.fa.fa-video-camera
-                              label.fileContainer
-                                input[type="file"]
-                            li
-                              button[type="submit"]
-                                = t ".publish"
-              = render @reviews
-            .col-lg-3
+.page-header.edit-review
+  .header-inner
+    h2
+      = params[:location_id].present? ? @location.name : t(".all-reviews")
+.gap.gray-bg
+  .row#page-contents.justify-content-center
+    .col-lg-8
+      = render @reviews
+      == pagy_nav @pagy if @pagy.present?

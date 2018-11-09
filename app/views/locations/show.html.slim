@@ -1,45 +1,47 @@
-section
-  .gap.gray-bg
-    .container-fluid
-      .row
-        .col-lg-12
-          .row#page-contents
-            .col-lg-3
-            .col-lg-6
-              .central-meta.item
-                .user-post
-                  .friend-info
-                    .friend-name
-                      ins
-                        = link_to @location.name, location_path
-                    .post-meta
-                      = link_to image_tag(@location.thumbnail_url), location_path
-                      .we-video-info
-                        ul
-                          li
-                            span.views[data-toggle="tooltip" title="views"]
-                              i.fa.fa-eye
-                              ins
-                                | 1.2k
-                          li
-                            span.comment[data-toggle="tooltip" title="Comments"]
-                              i.fas.fa-comments
-                              ins
-                                | 52
-                          li
-                            span.like[data-toggle="tooltip" title="like"]
-                              i.fas.fa-heart
-                              ins
-                                | 2.2k
-                          li
-                            span.dislike[data-toggle="tooltip" title="dislike"]
-                              i.fas.fa-heartbeat
-                              ins
-                                | 200
-                      .description
-                        p
-                          = raw @location.description
-                        = link_to t(".new_review"), new_location_review_path(@location), "data-turbolinks": false
-                        br
-                        = link_to t(".reviews_list"), location_reviews_path(@location)
-            .col-lg-3
+.page-header.show-location
+  .header-inner
+    h2
+      = @location.name
+.gap.gray-bg
+  .row#page-contents.justify-content-center
+    .col-lg-10
+      .central-meta.padding-50.show-location
+        h2.title
+          = @location.name
+        ul.meta
+          li
+            i.fas.fa-edit
+            = link_to t(".new_review"), new_location_review_path(@location), "data-turbolinks": false
+          li
+            i.fas.fa-list-ul
+            = link_to t(".reviews_list"), location_reviews_path(@location)
+        ul.meta-total
+          li
+            i.fas.fa-sun
+            = t ".location-review"
+            = @location.reviews.count
+          li
+            i.fas.fa-check
+            = t ".location-checkin"
+            = @location.micro_posts.count
+          li
+            i.fas.fa-users
+            = t ".location-checkin-user"
+            = @location.micro_posts.pluck(:user_id).count
+          li
+            i.far.fa-eye
+            = t ".location-views"
+            = @location.hits
+        - if @location.images.present?
+          .owl-carousel.owl-theme.show-slider
+            - @location.images.each do |image|
+              .item
+                = link_to image.image_url, :"data-lightbox" => "location" do
+                  = image_tag image.image_url, class: "img-fluid img-thumbnail"
+        .content
+          = raw @location.description
+        - if @location.address.present?
+          #map[data=(@location.address)["location"]]
+        .social-share
+          = social_share_button_tag @location.name
+        

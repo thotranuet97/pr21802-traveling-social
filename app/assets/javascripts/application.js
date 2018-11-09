@@ -20,6 +20,9 @@
 //= require ckeditor/init
 //= require cocoon
 //= require gmaps/google
+//= require social-share-button
+//= require owl.carousel
+//= require lightbox.min
 //= require_tree .
 
 $(document).on("turbolinks:load", function () {
@@ -29,6 +32,24 @@ $(document).on("turbolinks:load", function () {
   $('.setting-area li a').on('click', function () {
     $(this).next().toggleClass('show');
   });
+
+  // Images location slider
+  $('.show-slider').owlCarousel({
+    loop: true,
+    margin: 10,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 4
+      },
+    }
+  })
 
   // Auotocomplete location status
   $autocomplete = function () {
@@ -89,20 +110,20 @@ $(document).on("turbolinks:load", function () {
 
   handler = Gmaps.build('Google');
   if (handler) {
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers([  
-        {  
-          "lat": $("#map").data("latitude"),  
-          "lng": $("#map").data("longitude"),  
-          "picture": {  
-            "width":  32,  
-            "height": 32  
-          },  
-          "infowindow": "SJSU"  
-        }  
-      ]);  
-      handler.bounds.extendWith(markers);  
-      handler.fitMapToBounds();  
+    handler.buildMap({ provider: {}, internal: { id: 'map' } }, function () {
+      markers = handler.addMarkers([
+        {
+          "lat": $("#map").data("latitude"),
+          "lng": $("#map").data("longitude"),
+          "picture": {
+            "width": 32,
+            "height": 32
+          },
+          "infowindow": "SJSU"
+        }
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
     });
   }
 });
