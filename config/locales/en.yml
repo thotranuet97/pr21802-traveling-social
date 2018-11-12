@@ -2,24 +2,24 @@ en:
   page:
     index:
       hello: "Hello world"
-      browse: "Browse"
-      news_feed: "News Feed"
-      reviews: "Reviews"
-      my_page: "My Page"
-      following: "Following"
-      images: "Images"
-      events: "Events"
-      logout: "Logout"
-      recent: "Recent Activity"
-      your_page: "Your Page"
-      my_page: "My Page"
-      new_events: "Create your new events."
-      start_now: "Start now!"
       likes: "likes"
       views: "views"
       new_likes: "new likes this week"
       write_something: "Write something..."
+    left-sidebar:
+      browse: "Browse"
+      cities: "Cities"
+      news_feed: "News Feed"
+      my_page: "My Page"
+      following: "Following"
       locations: "Locations"
+      logout: "Logout"
+      events: "Events"
+      statistics: "Statistics"
+      images: "Images"
+    right-sidebar:
+      your_page: "Your page"
+      following: "Following"
   layouts:
     header:
       en: "English"
@@ -55,6 +55,14 @@ en:
         admin: "Admin"
         sign_out: "Sign out"
       back_to_home: "Back to home"
+    left-sidebar:
+      edit-info: "Edit info"
+      basic-info: "Basic info"
+      cities: "Cities"
+      locations: "Locations"
+      account-setting: "Account setting"
+    right-sidebar:
+      who-following: "Who's following ?"
     devise:
       back_to_home: "Back to home"
       title: "Travelling Social"
@@ -234,6 +242,7 @@ en:
       comment-add: "Add comment"
       comment-placeholder: "Place comment here..."
       leave-a-comment: "Leave a comment:"
+      confirm: "Are you sure ?"
     edit:
       edit_review: "Edit review"
     new:

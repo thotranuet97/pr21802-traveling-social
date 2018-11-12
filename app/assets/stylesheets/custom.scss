@@ -622,3 +622,13 @@ label.review_thumbnail{
     }
   }
 }
+.images-row{
+  margin-left: -5px;
+  margin-right: -5px;
+  .col-md-3{
+    padding: 0 5px;
+  }
+  .card{
+    margin-bottom: 10px;
+  }
+}

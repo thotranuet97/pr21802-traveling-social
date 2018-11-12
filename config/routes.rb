@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
     resources :users, only: :show do
       resources :reviews, except: :show
+      resources :images, only: :index
     end
     resources :reviews, only: [:show] do
       resources :comments, only: [:create]

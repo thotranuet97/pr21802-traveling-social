@@ -1,0 +1,37 @@
+aside.sidebar.static
+  .widget
+    h4.widget-title
+      = t ".browse"
+    ul.naves
+      li
+        i.fas.fa-clipboard
+        = link_to root_path do
+          = t ".news_feed"
+      li
+        i.fas.fa-user
+        = link_to user_path(current_user) do
+          = t ".my_page"
+      li
+        i.fas.fa-city
+        = link_to cities_path do
+          = t ".cities"
+      li
+        i.fas.fa-compass
+        = link_to locations_path do
+          = t ".locations"
+      li
+        i.fas.fa-users
+        = link_to user_follows_path(current_user.id) do
+          = t ".following"
+      li
+        i.fas.fa-image
+        = link_to user_images_path(current_user.id) do
+          = t ".images"
+      li
+        i.fas.fa-chart-bar
+        a href="#" title=""
+          = t ".statistics"
+      li
+        i.fas.fa-sign-out-alt
+        = link_to destroy_user_session_path, method: :delete do
+          = t ".logout"

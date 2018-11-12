@@ -6,6 +6,7 @@
       .col-md
           = f.file_field :image
           = f.hidden_field :image_cache, value: f.object.image_cache
+          = f.hidden_field :user_id, value: current_user.id
       .col-md
         - if f.object.image.url.present?
         = image_tag f.object.image.url

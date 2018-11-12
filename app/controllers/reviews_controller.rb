@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_location, only: [:create, :new, :index]
+  before_action :set_location, only: [:create, :new]
   before_action :set_review, except: [:create, :new, :index]
   def new
     @review = @location.reviews.build
@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.location = @location
     if @review.save
       flash[:info] = t ".review_created"
-      redirect_to review_path(@location, @review)
+      redirect_to review_path(@review)
     else
       flash[:alert] = t ".review_created_error"
       render :new
@@ -19,10 +19,12 @@ class ReviewsController < ApplicationController
 
   def index
     if params[:location_id].present?
+      @location = Location.friendly.find params[:location_id]
       @pagy, @reviews = pagy_array @location.reviews, 
         items: Settings.reviews.per_page
     else
-      @pagy, @reviews = pagy_array current_user.reviews, 
+      @user = User.find_by id: params[:user_id]
+      @pagy, @reviews = pagy_array @user.reviews, 
         items: Settings.reviews.per_page
     end
   end
@@ -39,7 +41,7 @@ class ReviewsController < ApplicationController
   
   def update
     if @review.update_attributes review_params
-      redirect_to review_path(@review.location, @review),
+      redirect_to review_path(@review),
         notice: t(".review_updated")
     else
       render :edit
@@ -48,7 +50,7 @@ class ReviewsController < ApplicationController
   
   def destroy
     @review.destroy
-    redirect_to root_path, notice: t(".review_deleted")
+    redirect_to location_reviews_path, notice: t(".review_deleted")
   end
   
   private
@@ -62,6 +64,6 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit :name, :content, :thumbnail,
-      images_attributes: [:id, :image, :image_cache, :_destroy]
+      images_attributes: [:id, :image, :image_cache, :_destroy, :user_id]
   end
 end

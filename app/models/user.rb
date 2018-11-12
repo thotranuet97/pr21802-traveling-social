@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :micro_posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :events, dependent: :destroy
+  has_many :images, dependent: :destroy
 
   enum gender: {male: 1, female: 0, other: 2}
   mount_uploader :thumbnail, ImageUploader
@@ -19,4 +20,8 @@ class User < ApplicationRecord
   acts_as_follower
   acts_as_voter
   acts_as_paranoid
+
+  def User.list_following user
+    user.all_following.take 5
+  end
 end

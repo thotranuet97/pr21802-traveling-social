@@ -23,17 +23,6 @@ class MicroPostsController < ApplicationController
     end
   end
   
-  def destroy
-    @micro_post = current_user.micro_posts.find_by id: params[:id]
-    @micro_post.destroy
-    respond_to do |format|
-      format.html do
-        redirect_to user_path(current_user), danger: t(".success")
-      end
-      format.js
-    end
-  end
-
   private
   
   def micropost_params

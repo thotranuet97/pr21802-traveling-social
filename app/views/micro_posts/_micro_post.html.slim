@@ -13,7 +13,7 @@ div class="central-meta .item" id="status-#{micro_post.id}"
         = render "micro_posts/micro_post-link", micro_post: micro_post
         span
           = time_ago_in_words micro_post.created_at
-      - if user_signed_in? && current_user?(@user)
+      - if user_signed_in? && current_user?(micro_post.user)
         .buttons
           ul
             li
@@ -25,16 +25,17 @@ div class="central-meta .item" id="status-#{micro_post.id}"
       .post-meta
         = render "micro_posts/micro_post-content", micro_post: micro_post
         - if user_signed_in?
-          .we-video-info#vote_form
-            ul
-              li
-                span.comment[data-toggle="modal" title="#{t(".comments")}" data-target="#status-comment-#{micro_post.id}"]
-                  i.far.fa-comments
-                  ins
-                    = micro_post.all_comments.count
-              li.upvotes
-                = render "upvotes/form", micro_post: micro_post
-              li.downvotes
-                = render "downvotes/form", micro_post: micro_post
+          - if current_user.following?(micro_post.user) || current_user?(micro_post.user)
+            .we-video-info#vote_form
+              ul
+                li
+                  span.comment[data-toggle="modal" title="#{t(".comments")}" data-target="#status-comment-#{micro_post.id}"]
+                    i.far.fa-comments
+                    ins
+                      = micro_post.all_comments.count
+                li.upvotes
+                  = render "upvotes/form", micro_post: micro_post
+                li.downvotes
+                  = render "downvotes/form", micro_post: micro_post
         .edit-form
         = render "micro_posts/micro_post-comment", micro_post: micro_post

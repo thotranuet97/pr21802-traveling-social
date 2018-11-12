@@ -1,8 +1,13 @@
 aside.sidebar.static
-  .widget.stick-widget
+  .widget
     h4.widget-title
-      = t ".who-following"
-    ul.followers
+      = t ".your_page"
+    .your-page
+      
+  .widget.friend-list.stick-widget
+    h4.widget-title
+      = t ".following"
+    ul#people-list.friendz-list
       - @list_following.each do |following|
         li
           figure

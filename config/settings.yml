@@ -9,3 +9,7 @@ reviews:
   per_page: 20
 comments:
   per_page: 5
+images:
+  per_page: 50
+micro_posts:
+  per_page: 20

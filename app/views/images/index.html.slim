@@ -9,9 +9,13 @@ section
               = render "layouts/left-sidebar" 
             .col-lg-6
               = render "shared/error_msg"
-              - if user_signed_in? && current_user?(@user)
-                = render "micro_posts/form"
-              = render @micro_posts
+              .central-meta
+                .row.images-row
+                  - @images.each do |image|
+                    .col-md-3
+                      .card
+                        = link_to image.image_url, :"data-lightbox" => "photo" do
+                          = image_tag image.image_url, class: "img-fluid img-thumbnail"
               == pagy_nav @pagy if @pagy.present?
             .col-lg-3
               = render "layouts/right-sidebar" 
