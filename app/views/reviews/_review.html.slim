@@ -27,7 +27,7 @@
               span.comment data-toggle="tooltip" title="#{t ".comments"}"
                 i.fas.fa-comments
                 ins
-                  | 52
+                  = review.all_comments.count
             li
               = link_to location_path(review.location), title: "#{t ".view-location"}" do
                 i.fas.fa-map-marker-alt

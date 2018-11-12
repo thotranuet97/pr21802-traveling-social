@@ -1,4 +1,6 @@
 class Review < ApplicationRecord
+  include Nested
+  
   belongs_to :user
   belongs_to :location, required: false, inverse_of: :reviews
   has_many :comments, as: :commentable, dependent: :destroy

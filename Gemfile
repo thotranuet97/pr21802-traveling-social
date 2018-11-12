@@ -19,6 +19,7 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'social-share-button'
 gem 'owlcarousel-rails'
 gem 'punching_bag'
+gem 'searchkick'
 
 gem 'devise'
 gem 'cancancan'

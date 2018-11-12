@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
     @location = @review.location
     @review.punch request
     @pagy, @comments = pagy_array @review.comments.order_created_desc, 
-        items: Settings.comments.per_page
+      items: Settings.comments.per_page
   end
 
   def edit

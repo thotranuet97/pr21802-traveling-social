@@ -9,6 +9,8 @@ class Location < ApplicationRecord
       hide
     end
   end
+  
+  searchkick word_start: [:name], highlight: [:name], suggest: [:name]
 
   acts_as_punchable
 

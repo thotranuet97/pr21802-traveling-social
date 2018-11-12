@@ -1,0 +1,16 @@
+div class="modal fade" id="status-comment-#{micro_post.id}" tabindex="-1" role="dialog" aria-labelledby="status-comment-#{micro_post.id}" aria-hidden="true"
+  .modal-dialog[role="document"]
+    .modal-content
+      .modal-header
+        h5.modal-title
+          = micro_post.content.truncate(50)
+        button.close[type="button" data-dismiss="modal" aria-label="Close"]
+          span[aria-hidden="true"]
+            i.fas.fa-times
+      .modal-body
+        .coment-area.status-comment-area
+          = form_for [micro_post, Comment.new] do |f|
+            = f.text_area :content, placeholder: t(".comment-placeholder")
+            = f.submit t(".comment-add"), class: "btn btn-comment"
+          ul.comments-list
+            = render(partial: 'comments/comment', collection: micro_post.comments.order_created_desc)

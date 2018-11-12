@@ -1,4 +1,4 @@
-li
+li id="comment-item-#{comment.id}"
   div class="comment-wrap" id="comment-#{comment.id}"
     h5.comment-author
       = link_to user_path(comment.user) do
@@ -19,7 +19,7 @@ li
         li
           = link_to t(".edit"), "#edit-#{comment.id}", class: "btn-small", data: {toggle: "tab"}
         li
-          = link_to t(".delete"), comment, method: :delete, data: { confirm: t(".confirm") }, class: "btn-small"
+          = link_to t(".delete"), comment, method: :delete, remote: true, data: { confirm: t(".confirm") }, class: "btn-small"
     - if user_signed_in? && current_user?(comment.user)
       .comment-form.tab-content
         div class="tab-pane fade" id="reply-#{comment.id}"
@@ -27,7 +27,7 @@ li
             = f.text_area :content, placeholder: t(".add-a-reply")
             = f.submit t(".reply"), class: "btn btn-comment"
         div class="tab-pane fade" id="edit-#{comment.id}"
-          = form_for comment do |f|
+          = form_for comment, remote: true do |f|
             = f.text_area :content, placeholder: t(".add-a-edit")
             = f.submit t(".edit"), class: "btn btn-comment"
   ul

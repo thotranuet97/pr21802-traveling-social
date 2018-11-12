@@ -28,6 +28,7 @@ en:
       timeline: "Timeline"
       account_settings: "Account Settings"
       more_pages: "More Pages"
+      placeholder-location: "Type location here..."
     footer:
       copy_right: "© Winku 2018. All rights reserved."
     application:
@@ -182,10 +183,11 @@ en:
     micro_post:
       comments: "Comments"
       confirm: "Are you sure ?"
-      comment-add: "Add comment"
-      comment-placeholder: "Place comment here..."
     micro_post-link:
       at: "is at"
+    micro_post-comment:
+      comment-add: "Add comment"
+      comment-placeholder: "Place comment here..."
   upvotes:
     create:
       like: "Like !"
@@ -260,6 +262,7 @@ en:
       location-review: "Total reviews: "
       location-checkin: "Total check-in: "
       location-popular: "Popular !"
+      do-you-mean: "Do you mean "
   cities:
     index:
       cities: "List of cities"
@@ -279,4 +282,4 @@ en:
     destroy:
       delete: "Comment has been deleted!"
     update:
-      update: "Comment has been deleted!"
+      update: "Comment has been updated!"

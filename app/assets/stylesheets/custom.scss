@@ -340,6 +340,9 @@ label.review_thumbnail{
     margin-bottom: 10px;
     letter-spacing: 1px;
     color: #252525;
+    em{
+      color: #007bff;
+    }
   }
 }
 
@@ -582,5 +585,40 @@ label.review_thumbnail{
 #vote_form{
   span{
     cursor: pointer;
+  }
+}
+.search-locations-form{
+  position: relative;
+  input[type="text"]{
+    height: 40px;
+    border-radius: 20px;
+    min-width: 350px;
+    &::-webkit-input-placeholder { 
+      font-size: 12px;
+    }
+  }
+  button{
+    height: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 15px;
+  }
+}
+.location-suggestions{
+  margin-bottom: 20px;
+  font-size: 16px;
+  span{
+    font-weight: bold;
+    font-style: italic;
+  }
+}
+.we-video-info{
+  a,span{
+    &:hover{
+      color: #dc3545;
+    }
   }
 }

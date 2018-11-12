@@ -3,17 +3,11 @@ class MicroPostsController < ApplicationController
 
   def create
     @micro_post = current_user.micro_posts.new micropost_params
-    respond_to do |format|
-      if @micro_post.save
-        format.html do
-          redirect_to user_path(current_user), success: t(".success")
-        end
-      else
-        format.html do
-          flash[:danger] = @micro_post.errors.full_messages
-          redirect_back fallback_location: root_path
-        end
-      end
+    if @micro_post.save
+      redirect_to user_path(current_user), success: t(".success")
+    else
+      flash[:danger] = @micro_post.errors.full_messages
+      redirect_back fallback_location: root_path
     end
   end
 

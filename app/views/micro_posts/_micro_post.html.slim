@@ -31,25 +31,10 @@ div class="central-meta .item" id="status-#{micro_post.id}"
                 span.comment[data-toggle="modal" title="#{t(".comments")}" data-target="#status-comment-#{micro_post.id}"]
                   i.far.fa-comments
                   ins
-                    | 52
+                    = micro_post.all_comments.count
               li.upvotes
                 = render "upvotes/form", micro_post: micro_post
               li.downvotes
                 = render "downvotes/form", micro_post: micro_post
         .edit-form
-        div class="modal fade" id="status-comment-#{micro_post.id}" tabindex="-1" role="dialog" aria-labelledby="status-comment-#{micro_post.id}" aria-hidden="true"
-          .modal-dialog[role="document"]
-            .modal-content
-              .modal-header
-                h5.modal-title
-                  | Social networking
-                button.close[type="button" data-dismiss="modal" aria-label="Close"]
-                  span[aria-hidden="true"]
-                    | ×
-              .modal-body
-                .coment-area.status-comment-area
-                  = form_for [micro_post, Comment.new] do |f|
-                    = f.text_area :content, placeholder: t(".comment-placeholder")
-                    = f.submit t(".comment-add"), class: "btn btn-comment"
-                  ul.comments-list
-                    = render(partial: 'comments/comment', collection: micro_post.comments.order_created_desc)
+        = render "micro_posts/micro_post-comment", micro_post: micro_post
