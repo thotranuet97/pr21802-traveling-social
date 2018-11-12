@@ -1013,7 +1013,6 @@ textarea {
     border-radius: 6px 6px 0 0;
     padding: 10px;
     width: 100%;
-	border-bottom: 0;
 }
 form button {
     border: medium none;

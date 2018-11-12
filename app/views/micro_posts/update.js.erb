@@ -1,3 +1,3 @@
 $("#status-<%= @micro_post.id %> .description").replaceWith("<%= escape_javascript(render('micro_posts/micro_post-content', micro_post: @micro_post)) %>");
-$("#status-<%= @micro_post.id %> .check-in-link").replaceWith('<%= link_to @micro_post.location.name, location_path(@micro_post.location), class: "check-in-link" %>');
-$("#status-<%= @micro_post.id %> .central-meta").remove()
+$("#status-<%= @micro_post.id %> .check-in-link").replaceWith("<%= escape_javascript(render('micro_posts/micro_post-link', micro_post: @micro_post)) %>");
+$("#status-<%= @micro_post.id %> .central-meta").remove();

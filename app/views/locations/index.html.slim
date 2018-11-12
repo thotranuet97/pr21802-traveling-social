@@ -13,28 +13,59 @@
             = raw @city.description
           - if @city.address.present?
             #map[data=eval(@city.address)["location"]]
+      - if @locations.try :suggestions
+        .location-suggestions
+          = t ".do-you-mean"
+          - @locations.try(:suggestions).each do |location|
+            span
+              = location
+          | ?
       .central-meta
         .card-deck
-          - @locations.each do |location|
-            .card.item-location
-              = link_to location_path location do
-                .card-img-wrapper
-                  - if location.porpular.present?
-                    span.popular
-                      = t ".location-popular"
-                  = image_tag location.thumbnail_url, class: "card-img-top"
-                  span.city
-                    i.fas.fa-map-marker-alt
-                    = location.city.name
-                .card-body
-                  h5.card-title
-                    = location.name
-                  p.card-text
-                    i.fas.fa-sun
-                    = t ".location-review"
-                    = location.reviews.count
-                  p.card-text
-                    i.fas.fa-check
-                    = t ".location-checkin"
-                    = location.micro_posts.count  
+          - if @locations.try :with_highlights
+            - @locations.with_highlights.each do |location, highlights|
+              .card.item-location
+                = link_to location_path location do
+                  .card-img-wrapper
+                    - if location.porpular.present?
+                      span.popular
+                        = t ".location-popular"
+                    = image_tag location.thumbnail_url, class: "card-img-top"
+                    span.city
+                      i.fas.fa-map-marker-alt
+                      = location.city.name
+                  .card-body
+                    h5.card-title
+                      = raw highlights[:name]
+                    p.card-text
+                      i.fas.fa-sun
+                      = t ".location-review"
+                      = location.reviews.count
+                    p.card-text
+                      i.fas.fa-check
+                      = t ".location-checkin"
+                      = location.micro_posts.count
+          - else
+            - @locations.each do |location|
+              .card.item-location
+                = link_to location_path location do
+                  .card-img-wrapper
+                    - if location.porpular.present?
+                      span.popular
+                        = t ".location-popular"
+                    = image_tag location.thumbnail_url, class: "card-img-top"
+                    span.city
+                      i.fas.fa-map-marker-alt
+                      = location.city.name
+                  .card-body
+                    h5.card-title
+                      = location.name
+                    p.card-text
+                      i.fas.fa-sun
+                      = t ".location-review"
+                      = location.reviews.count
+                    p.card-text
+                      i.fas.fa-check
+                      = t ".location-checkin"
+                      = location.micro_posts.count
       == pagy_nav @pagy if @pagy.present?

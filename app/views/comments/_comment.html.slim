@@ -1,0 +1,34 @@
+li id="comment-item-#{comment.id}"
+  div class="comment-wrap" id="comment-#{comment.id}"
+    h5.comment-author
+      = link_to user_path(comment.user) do
+        - if comment.user.first_name.present?
+          = comment.user.first_name + " " + comment.user.last_name
+        - else
+          = comment.user.email
+    small
+      = t ".submitted"
+      = time_ago_in_words(comment.created_at)
+      = t ".ago"
+    .comment-content
+      = comment.content
+    ul.comment-buttons.nav.nav-tabs
+      li
+        = link_to t(".reply"), "#reply-#{comment.id}", class: "btn-small", data: {toggle: "tab"}
+      - if user_signed_in? && current_user?(comment.user)
+        li
+          = link_to t(".edit"), "#edit-#{comment.id}", class: "btn-small", data: {toggle: "tab"}
+        li
+          = link_to t(".delete"), comment, method: :delete, remote: true, data: { confirm: t(".confirm") }, class: "btn-small"
+    - if user_signed_in? && current_user?(comment.user)
+      .comment-form.tab-content
+        div class="tab-pane fade" id="reply-#{comment.id}"
+          = form_for [comment, Comment.new] do |f|
+            = f.text_area :content, placeholder: t(".add-a-reply")
+            = f.submit t(".reply"), class: "btn btn-comment"
+        div class="tab-pane fade" id="edit-#{comment.id}"
+          = form_for comment, remote: true do |f|
+            = f.text_area :content, placeholder: t(".add-a-edit")
+            = f.submit t(".edit"), class: "btn btn-comment"
+  ul
+    = render partial: 'comments/comment', collection: comment.comments

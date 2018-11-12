@@ -8,6 +8,13 @@ class LocationsController < ApplicationController
       @pagy, @locations = pagy Location.includes(:city), 
         items: Settings.locations.per_page
       @locations = @locations.search_location params[:s] if params[:s].present?
+
+      if params[:q].nil?
+        @pagy, @locations = pagy Location.includes(:city), 
+          items: Settings.locations.per_page
+      else
+        @locations = Location.search params[:q], highlight: true, suggest: true
+      end
     end
   end
   def show

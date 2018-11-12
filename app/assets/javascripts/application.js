@@ -65,7 +65,7 @@ $(document).on("turbolinks:load", function () {
           }));
         });
       },
-      minLength: 3,
+      minLength: 2,
       delay: 100,
       focus: function (event, ui) {
         $(this).val(ui.item.label);
@@ -96,6 +96,21 @@ $(document).on("turbolinks:load", function () {
     }
   }
   $autocomplete();
+
+  // Autocomplete header
+  $('#search').autocomplete({
+    source: function (request, response) {
+      $.getJSON("/locations.json?q=" + request.term, function (data) {
+        response($.map(data.locations, function (value, key) {
+          return {
+            value: value.name,
+          };
+        }));
+      });
+    },
+    minLength: 2,
+    delay: 100
+  });
 
   $(".buttons a.edit").on("click", function () {
     var status_id = $(this).attr('data-status-id');

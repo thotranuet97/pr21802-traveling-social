@@ -6,8 +6,11 @@ div
     .top-area 
       ul.setting-area
         li
-          a[href="javascript:0" title="Search"]
-            i.fas.fa-search
+          .search-locations-form
+            = form_tag locations_path, method: :get do
+              = text_field_tag :q, params[:q], id: "search", placeholder: t(".placeholder-location"), class: "form-control"
+              = button_tag type: "submit", name: nil do
+                i.fas.fa-search
         li
           = link_to root_path do
             i.fas.fa-home

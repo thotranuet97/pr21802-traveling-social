@@ -3,11 +3,11 @@
     .col-md-3
       .review-thumbnail
         - if review.thumbnail?
-          = link_to image_tag(review.thumbnail_url), location_review_path(review.location, review)
+          = link_to image_tag(review.thumbnail_url), review_path(review)
     .col-md-9
       .review-content
         h3.title
-          = link_to review.name, location_review_path(review.location, review)
+          = link_to review.name, review_path(review)
         ul.meta
           li
             = link_to user_path(review.user) do
@@ -27,11 +27,11 @@
               span.comment data-toggle="tooltip" title="#{t ".comments"}"
                 i.fas.fa-comments
                 ins
-                  | 52
+                  = review.all_comments.count
             li
-              = link_to location_path(@location), title: "#{t ".view-location"}" do
+              = link_to location_path(review.location), title: "#{t ".view-location"}" do
                 i.fas.fa-map-marker-alt
-                = @location.name
+                = review.location.name
             - if current_user.eql? review.user
               li
                 span.edit[data-toggle="tooltip" title="edit"]

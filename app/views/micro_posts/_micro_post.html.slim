@@ -10,12 +10,9 @@ div class="central-meta .item" id="status-#{micro_post.id}"
               = micro_post.user.first_name + " " + micro_post.user.last_name
             - else
               = micro_post.user.email
-        - if micro_post.location.present?
-          span.check-in
-            = t ".at"
-            = link_to micro_post.location.name, location_path(micro_post.location), class: "check-in-link"
+        = render "micro_posts/micro_post-link", micro_post: micro_post
         span
-          = time_ago_in_words micro_post.user.created_at
+          = time_ago_in_words micro_post.created_at
       - if user_signed_in? && current_user?(@user)
         .buttons
           ul
@@ -31,12 +28,13 @@ div class="central-meta .item" id="status-#{micro_post.id}"
           .we-video-info#vote_form
             ul
               li
-                span.comment[data-toggle="tooltip" title="Comments"]
+                span.comment[data-toggle="modal" title="#{t(".comments")}" data-target="#status-comment-#{micro_post.id}"]
                   i.far.fa-comments
                   ins
-                    | 52
+                    = micro_post.all_comments.count
               li.upvotes
                 = render "upvotes/form", micro_post: micro_post
               li.downvotes
                 = render "downvotes/form", micro_post: micro_post
         .edit-form
+        = render "micro_posts/micro_post-comment", micro_post: micro_post
