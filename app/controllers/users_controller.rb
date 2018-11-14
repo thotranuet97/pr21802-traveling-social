@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by id: params[:id]
     @micro_post = MicroPost.new
-    @micro_posts = @user.micro_posts.includes(:user, :location).order_created_desc
-
+    @pagy, @micro_posts = pagy_array @user.micro_posts.includes(:user, :location).order_created_desc, 
+      items: Settings.micro_posts.per_page
+    @list_following = User.list_following @user
     if params[:id_status]
       @micro_post = MicroPost.find_by id: params[:id_status]
       respond_to do |format|

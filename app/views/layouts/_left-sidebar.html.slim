@@ -1,25 +1,17 @@
 aside.sidebar.static
   .widget
     h4.widget-title
-      | Edit info
+      = t ".edit-info"
     ul.naves
       li
-        i.ti-info-alt
-        a[title="" href="edit-profile-basic.html"]
-          | Basic info
+        i.fas.fa-info
+        = link_to t(".basic-info"), profile_path(@user.id)
       li
-        i.ti-mouse-alt
-        a[title="" href="edit-work-eductation.html"]
-          | Education & Work
+        i.fas.fa-city
+        = link_to t(".cities"), cities_path
       li
-        i.ti-heart
-        a[title="" href="edit-interest.html"]
-          | My interests
+        i.far.fa-compass
+        = link_to t(".locations"), locations_path
       li
-        i.ti-settings
-        a[title="" href="edit-account-setting.html"]
-          | account setting
-      li
-        i.ti-lock
-        a[title="" href="edit-password.html"]
-          | change password
+        i.fas.fa-cogs
+        = link_to t(".account-setting"), edit_user_path(@user.id)

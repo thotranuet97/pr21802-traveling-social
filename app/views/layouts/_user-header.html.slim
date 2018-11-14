@@ -16,11 +16,6 @@ section
       - if user_signed_in?
         #follow_user
           = render partial: "users/follow", locals: {user: @user}
-    form.edit-phto
-      i.fa.fa-camera-retro
-      label.fileContainer
-        = t ".edit-cover"
-        input[type="file"]
     .container-fluid
       .row.merged
         .col-lg-2.col-sm-3
@@ -37,9 +32,8 @@ section
                   - else
                     = @user.email
               li
-                = link_to t(".timlines"), user_path(@user.id)
-                a[href="timeline-photos.html" title="" data-ripple=""]
-                  = t ".photos"
-                = link_to t(".review"), user_reviews_path(@user)
+                = link_to t(".timelines"), user_path(@user.id)
+                = link_to t(".photos"), user_images_path(@user.id)
+                = link_to t(".reviews"), user_reviews_path(@user)
                 = link_to t(".follow"), user_follows_path(@user.id)
                 = link_to t(".about"), profile_path(@user.id)
