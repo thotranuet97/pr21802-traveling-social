@@ -1,0 +1,18 @@
+section
+  .gap.gray-bg
+    .container-fluid
+      .row
+        .col-lg-12
+          .row#page-contents
+            .col-lg-3
+              = render "pages/left-sidebar"
+            .col-lg-6
+              .central-meta
+                h3.
+                  = t ".locations"
+                = pie_chart @cities.group(:name).count
+                h3.
+                  = t ".reviews"
+                = column_chart @reviews.group(:name).count
+            .col-lg-3
+              = render "pages/right-sidebar"

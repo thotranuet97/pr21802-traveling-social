@@ -20,6 +20,8 @@ gem 'social-share-button'
 gem 'owlcarousel-rails'
 gem 'punching_bag'
 gem 'searchkick'
+gem 'chartkick'
+gem 'groupdate'
 
 gem 'devise'
 gem 'cancancan'
