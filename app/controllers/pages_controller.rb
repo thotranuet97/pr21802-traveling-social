@@ -1,6 +1,7 @@
-class PageController < ApplicationController
+class PagesController < ApplicationController
+  before_action :list_following, only: [:index, :statistic]
+
   def index
-    @list_following = User.list_following current_user
     @micro_post = MicroPost.new
     @pagy, @micro_posts = pagy_array MicroPost.all_status(current_user), 
       items: Settings.micro_posts.per_page
@@ -11,5 +12,16 @@ class PageController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  def statistic
+    @cities = City.joins(:locations).select 'locations.name'
+    @reviews = Review.joins(:location).select 'locations.name'
+  end
+
+  private
+
+  def list_following
+    @list_following = User.list_following current_user
   end
 end

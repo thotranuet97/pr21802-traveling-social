@@ -23,6 +23,8 @@
 //= require social-share-button
 //= require owl.carousel
 //= require lightbox.min
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
 
 $(document).on("turbolinks:load", function () {

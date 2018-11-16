@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     mount Ckeditor::Engine => '/ckeditor'
     devise_for :users
-    root 'page#index'
+    root 'pages#index'
+    get 'statistic', to: 'pages#statistic'
     mount RailsAdmin::Engine => '/wp-admin', as: 'rails_admin'
     resources :users, only: [:show, :edit, :update, :destroy] do
       resources :follows, only: [:create, :destroy, :index]

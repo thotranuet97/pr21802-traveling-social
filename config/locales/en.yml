@@ -20,6 +20,9 @@ en:
     right-sidebar:
       your_page: "Your page"
       following: "Following"
+    statistic:
+      locations: "Location statistics by city"
+      reviews: "Review statistics by location"
   layouts:
     header:
       en: "English"

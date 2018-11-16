@@ -5,7 +5,7 @@ section
         .col-lg-12
           .row#page-contents
             .col-lg-3
-              = render "page/left-sidebar"
+              = render "pages/left-sidebar"
             .col-lg-6
               = render "shared/error_msg"
               - if user_signed_in? && current_user?(@user)
@@ -13,5 +13,4 @@ section
               = render @micro_posts
               == pagy_nav @pagy if @pagy.present?
             .col-lg-3
-              = render "page/right-sidebar"
-                    
+              = render "pages/right-sidebar"
