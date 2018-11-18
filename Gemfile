@@ -42,6 +42,9 @@ gem 'ratyrate'
 
 gem 'rails_admin'
 gem 'rails_admin_google_map'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'figaro'
 
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 

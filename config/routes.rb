@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
+  devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
   scope "(:locale)", locale: /en|vi/ do
+    post '/rate' => 'rater#create', :as => 'rate'
     mount Ckeditor::Engine => '/ckeditor'
-    devise_for :users
+    devise_for :users, skip: :omniauth_callbacks
     root 'pages#index'
     get 'statistic', to: 'pages#statistic'
     mount RailsAdmin::Engine => '/wp-admin', as: 'rails_admin'

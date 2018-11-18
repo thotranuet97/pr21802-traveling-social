@@ -55,3 +55,18 @@
     }
   }
 }
+.btn.google-login{
+  background: #d34836;
+  color: #fff;
+  font-size: 16px;
+  position: relative;
+  &:hover{
+    background: #bd2130;
+    color: #fff;
+  }
+  i{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+  }
+}

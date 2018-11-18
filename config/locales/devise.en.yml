@@ -1,4 +1,8 @@
 en:
+  users:
+    omniauth_callbacks:
+      google_oauth2:
+        google_oauth2: "Google"
   activerecord:
     attributes:
       user:
@@ -120,7 +124,7 @@ en:
         didn_t_receive_unlock_instructions: Didn't receive unlock instructions?
         forgot_your_password: Forgot your password?
         sign_in: Log in
-        sign_in_with_provider: Sign in with %{provider}
+        provider: Google
         sign_up: Sign up
       minimum_password_length:
         one: "(%{count} character minimum)"
