@@ -1,7 +1,7 @@
 class Location < ApplicationRecord
   ratyrate_rateable "overall"
   belongs_to :user
-  belongs_to :city, optional: true, inverse_of: :locations
+  belongs_to :city, inverse_of: :locations
   has_many :reviews, dependent: :destroy
   has_many :micro_posts
   has_many :images, as: :lr_image, dependent: :destroy, inverse_of: :lr_image

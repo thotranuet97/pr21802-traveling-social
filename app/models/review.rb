@@ -2,7 +2,7 @@ class Review < ApplicationRecord
   include Nested
   
   belongs_to :user
-  belongs_to :location, required: false, inverse_of: :reviews
+  belongs_to :location, inverse_of: :reviews
   has_many :comments, as: :commentable, dependent: :destroy
   
   has_many :images, as: :lr_image, dependent: :destroy, inverse_of: :lr_image

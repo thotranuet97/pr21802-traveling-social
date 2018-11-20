@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_location, except: [:show, :update, :destroy]
+  before_action :set_location, only: [:new, :create, :edit]
   before_action :set_review, except: [:create, :new, :index]
   def new
     @review = @location.reviews.build
